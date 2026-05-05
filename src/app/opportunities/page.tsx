@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import Header from '@/components/Header';
 import {
   Search,
@@ -36,7 +37,7 @@ const stats = [
 const opportunities = [
   {
     company: 'TCS',
-    logo: 'T',
+    logo: '/tcs.png',
     tag: 'NQT',
     role: 'TCS Ninja',
     batch: '2025 Batch',
@@ -50,7 +51,7 @@ const opportunities = [
   },
   {
     company: 'Infosys',
-    logo: 'I',
+    logo: '/infosys.png',
     tag: 'Hiring',
     role: 'Systems Engineer',
     batch: '2025 Batch',
@@ -64,7 +65,7 @@ const opportunities = [
   },
   {
     company: 'Wipro',
-    logo: 'W',
+    logo: '/wipro.png',
     tag: 'Elite',
     role: 'Project Engineer',
     batch: '2024/2025 Batch',
@@ -78,7 +79,7 @@ const opportunities = [
   },
   {
     company: 'Zoho',
-    logo: 'Z',
+    logo: '/zoho.png',
     tag: 'Internship',
     role: 'Software Development Intern',
     batch: 'Summer Internship - 2025',
@@ -92,7 +93,7 @@ const opportunities = [
   },
   {
     company: 'Amazon',
-    logo: 'A',
+    logo: '/amazon.png',
     tag: 'Hiring',
     role: 'SDE I',
     batch: '2025 Batch',
@@ -210,8 +211,14 @@ export default function OpportunitiesPage() {
                   {opportunities.map((opp, idx) => (
                     <div key={idx} className="p-7 flex items-center gap-8 hover:bg-slate-50/50 transition-all group">
                       {/* Company Logo */}
-                      <div className="w-16 h-16 bg-white border border-slate-100 rounded-2xl flex items-center justify-center font-black text-2xl text-slate-800 shadow-sm group-hover:scale-105 transition-transform flex-shrink-0">
-                        {opp.logo}
+                      <div className="w-16 h-16 bg-white border border-slate-100 rounded-2xl flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform flex-shrink-0 overflow-hidden p-2">
+                        <Image 
+                          src={opp.logo} 
+                          alt={opp.company} 
+                          width={64} 
+                          height={64} 
+                          className="w-full h-full object-contain"
+                        />
                       </div>
 
                       {/* Main Info */}

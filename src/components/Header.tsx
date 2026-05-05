@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Bell, Search, User, Crown } from 'lucide-react';
+import { Bell, Search, User } from 'lucide-react';
 
 const Header = ({ title = "Dashboard", showSearch = true }: { title?: string, showSearch?: boolean }) => {
   return (
@@ -15,6 +15,7 @@ const Header = ({ title = "Dashboard", showSearch = true }: { title?: string, sh
           <div className="flex-1 max-w-xl flex items-center bg-white border border-border rounded-xl px-4 h-12 gap-3 focus-within:ring-2 focus-within:ring-accent-red/20 transition-all">
             <Search size={18} className="text-muted" />
             <input 
+              suppressHydrationWarning
               type="text" 
               placeholder="Search for assessments, skills..." 
               className="border-none outline-none w-full text-sm bg-transparent"
@@ -22,18 +23,9 @@ const Header = ({ title = "Dashboard", showSearch = true }: { title?: string, sh
           </div>
         )}
 
-        <div className="bg-white border border-border px-5 h-12 rounded-xl flex items-center gap-4 hidden md:flex hover:shadow-sm transition-all min-w-[240px]">
-          <div className="w-8 h-8 rounded-lg bg-amber-50 flex items-center justify-center text-amber-500 shadow-sm">
-            <Crown size={18} fill="currentColor" fillOpacity={0.15} />
-          </div>
-          <div className="flex flex-row items-center gap-2.5">
-            <span className="brand-subtitle text-muted whitespace-nowrap">Current Plan</span>
-            <div className="w-[1px] h-3 bg-border"></div>
-            <span className="text-sm font-bold text-primary-navy">Premium</span>
-          </div>
-        </div>
 
-        <button className="relative w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-xl bg-white border border-border text-primary-navy hover:bg-slate-50 transition-all">
+
+        <button suppressHydrationWarning className="relative w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-xl bg-white border border-border text-primary-navy hover:bg-slate-50 transition-all">
           <Bell size={20} />
           <span className="absolute top-2.5 right-2.5 w-4 h-4 bg-accent-red text-white text-[9px] rounded-full flex items-center justify-center border-2 border-white font-bold">
             3

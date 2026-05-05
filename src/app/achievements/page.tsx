@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import Header from '@/components/Header';
 import {
   Trophy,
@@ -70,11 +71,11 @@ const summaryData = [
 ];
 
 const leaderboard = [
-  { name: 'Riya Sharma', points: '2,950 pts', rank: 1, avatar: 'RS' },
-  { name: 'Arjun Kumar (You)', points: '2,450 pts', rank: 2, avatar: 'AK', highlight: true },
-  { name: 'Karan Mehta', points: '2,150 pts', rank: 3, avatar: 'KM' },
-  { name: 'Sneha Patel', points: '1,980 pts', rank: 4, avatar: 'SP' },
-  { name: 'Aditya Verma', points: '1,750 pts', rank: 5, avatar: 'AV' },
+  { name: 'Riya Sharma', points: '2,950 pts', rank: 1, avatar: '/avatars/riya.png' },
+  { name: 'Arjun Kumar (You)', points: '2,450 pts', rank: 2, avatar: '/avatars/arjun.png', highlight: true },
+  { name: 'Karan Mehta', points: '2,150 pts', rank: 3, avatar: '/avatars/karan.png' },
+  { name: 'Sneha Patel', points: '1,980 pts', rank: 4, avatar: '/avatars/sneha.png' },
+  { name: 'Aditya Verma', points: '1,750 pts', rank: 5, avatar: '/avatars/aditya.png' },
 ];
 
 const streakData = [
@@ -320,8 +321,14 @@ export default function AchievementsPage() {
                 {leaderboard.map((user, idx) => (
                   <div key={idx} className={`flex items-center gap-3 p-2 rounded-2xl transition-all ${user.highlight ? 'bg-indigo-50 border border-indigo-100 shadow-sm' : ''}`}>
                     <span className={`text-[10px] font-black w-4 ${idx === 0 ? 'text-amber-500' : idx === 1 ? 'text-slate-400' : 'text-slate-300'}`}>{user.rank}</span>
-                    <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-[10px] font-black text-slate-500 border border-white shadow-sm">
-                       {user.avatar}
+                    <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center border-2 border-white shadow-sm overflow-hidden flex-shrink-0">
+                       <Image 
+                         src={user.avatar} 
+                         alt={user.name} 
+                         width={40} 
+                         height={40} 
+                         className="w-full h-full object-cover"
+                       />
                     </div>
                     <div className="flex-1 min-w-0">
                       <h4 className="text-[11px] font-bold text-slate-800 truncate">{user.name}</h4>

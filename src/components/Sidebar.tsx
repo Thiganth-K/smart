@@ -37,7 +37,7 @@ const Sidebar = () => {
 
   return (
     <aside className="w-64 h-screen bg-primary-navy text-white flex flex-col fixed left-0 top-0 z-[100] border-r border-white/10" suppressHydrationWarning={true}>
-      <div className="p-8">
+      <div className="px-4 py-8">
         <Logo variant="light" />
       </div>
 
@@ -73,7 +73,7 @@ const Sidebar = () => {
           </div>
           <p className="font-semibold text-sm mb-1">Need Guidance?</p>
           <p className="text-[10px] text-white/60 mb-4">Ask your AI Assistant</p>
-          <button className="bg-accent-red text-white w-full py-2 rounded-lg text-xs font-bold hover:bg-red-700 transition-colors">
+          <button suppressHydrationWarning className="bg-accent-red text-white w-full py-2 rounded-lg text-xs font-bold hover:bg-red-700 transition-colors">
             Chat Now
           </button>
         </div>

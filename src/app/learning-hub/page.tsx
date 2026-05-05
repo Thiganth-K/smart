@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import Header from '@/components/Header';
 import { 
   BookOpen, 
@@ -43,12 +44,12 @@ export default function LearningHubPage() {
         {/* Top Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-8 items-stretch">
           {/* Your Learning Journey (Larger) */}
-          <div className="lg:col-span-5 card-premium p-6">
-            <h3 className="text-[14px] font-bold text-slate-800 mb-8">Your Learning Journey</h3>
-            <div className="flex flex-col md:flex-row gap-8 items-center">
+          <div className="lg:col-span-5 card-premium p-8 flex flex-col justify-between">
+            <h3 className="text-[18px] font-bold text-slate-800 mb-10">Your Learning Journey</h3>
+            <div className="flex flex-col md:flex-row gap-10 items-center flex-1">
               {/* Left Side: Circular Progress */}
               <div className="flex flex-col items-center flex-shrink-0">
-                <div className="relative w-36 h-36 flex items-center justify-center">
+                <div className="relative w-44 h-44 flex items-center justify-center">
                   <svg className="w-full h-full transform -rotate-90">
                     <defs>
                       <linearGradient id="journeyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -58,57 +59,57 @@ export default function LearningHubPage() {
                       </linearGradient>
                     </defs>
                     <circle 
-                      cx="72" cy="72" r="64" 
+                      cx="88" cy="88" r="78" 
                       fill="none" 
                       stroke="#f1f5f9" 
-                      strokeWidth="8" 
+                      strokeWidth="10" 
                     />
                     <circle 
-                      cx="72" cy="72" r="64" 
+                      cx="88" cy="88" r="78" 
                       fill="none" 
                       stroke="url(#journeyGradient)" 
-                      strokeWidth="8" 
-                      strokeDasharray="402.12"
-                      strokeDashoffset={402.12 * (1 - 0.68)}
+                      strokeWidth="10" 
+                      strokeDasharray="490.09"
+                      strokeDashoffset={490.09 * (1 - 0.68)}
                       strokeLinecap="round"
                     />
                   </svg>
                   <div className="absolute flex flex-col items-center">
-                    <span className="text-[32px] font-black text-slate-800">68%</span>
-                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Overall Progress</span>
+                    <span className="text-[44px] font-black text-slate-800 tracking-tighter">68%</span>
+                    <span className="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Overall Progress</span>
                   </div>
                 </div>
-                <p className="text-[11px] font-medium text-slate-500 mt-6 text-center max-w-[140px] leading-relaxed">
+                <p className="text-[13px] font-medium text-slate-500 mt-8 text-center max-w-[180px] leading-relaxed">
                   Great job! You're making strong progress 🎉
                 </p>
               </div>
 
               {/* Right Side: Roadmap Details */}
-              <div className="flex-1 space-y-6 w-full">
+              <div className="flex-1 space-y-10 w-full flex flex-col justify-center">
                 <div>
-                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-2">Current Roadmap</span>
-                  <h4 className="text-[16px] font-bold text-slate-800 mb-3">Full Stack Developer</h4>
-                  <div className="flex items-center gap-4">
-                    <div className="flex-1 h-2 bg-slate-100 rounded-full overflow-hidden">
+                  <span className="text-[11px] font-bold text-slate-400 uppercase tracking-widest block mb-3">Current Roadmap</span>
+                  <h4 className="text-[20px] font-black text-slate-800 mb-4 tracking-tight">Full Stack Developer</h4>
+                  <div className="flex items-center gap-6">
+                    <div className="flex-1 h-3 bg-slate-100 rounded-full overflow-hidden">
                       <div className="h-full bg-gradient-to-r from-indigo-500 to-blue-500 rounded-full" style={{ width: '68%' }} />
                     </div>
-                    <span className="text-[11px] font-black text-slate-800">68%</span>
+                    <span className="text-[14px] font-black text-slate-800">68%</span>
                   </div>
                 </div>
 
                 <div>
-                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-2">Next Milestone</span>
-                  <div className="space-y-1">
-                    <h5 className="text-[13px] font-bold text-slate-700">Complete System Design Module</h5>
-                    <div className="flex items-center gap-1.5 text-slate-500">
-                      <TrendingUp size={12} className="text-green-500" />
-                      <span className="text-[10px] font-bold">38 topics completed</span>
+                  <span className="text-[11px] font-bold text-slate-400 uppercase tracking-widest block mb-3">Next Milestone</span>
+                  <div className="space-y-2">
+                    <h5 className="text-[15px] font-bold text-slate-700">Complete System Design Module</h5>
+                    <div className="flex items-center gap-2 text-slate-500">
+                      <TrendingUp size={14} className="text-green-500" />
+                      <span className="text-[11px] font-bold">38 topics completed</span>
                     </div>
                   </div>
                 </div>
 
-                <button className="flex items-center gap-1.5 text-[11px] font-bold text-blue-600 hover:gap-2 transition-all group">
-                  View Roadmap <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
+                <button className="flex items-center gap-2 text-[13px] font-bold text-blue-600 hover:gap-3 transition-all group mt-2">
+                  View Roadmap <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
                 </button>
               </div>
             </div>
@@ -131,38 +132,48 @@ export default function LearningHubPage() {
           </div>
 
           {/* Continue Learning (Modernized) */}
-          <div className="lg:col-span-3 card-premium p-5 flex flex-col">
+          <div className="lg:col-span-3 card-premium p-5 flex flex-col h-full">
             <h3 className="text-[14px] font-bold text-slate-800 mb-6">Continue Learning</h3>
             
-            <div className="bg-white border border-slate-100 rounded-2xl p-4 mb-6 shadow-sm">
-              <div className="flex gap-4 mb-4">
-                <img 
-                  src="/system_design_thumbnail_1777825752260.png" 
+            <div className="bg-white border border-slate-100 rounded-2xl overflow-hidden mb-6 shadow-sm flex flex-col flex-1">
+              <div className="relative h-32 w-full overflow-hidden">
+                <Image 
+                  src="/system-design.png" 
                   alt="System Design" 
-                  className="w-20 h-20 rounded-xl object-cover flex-shrink-0" 
+                  fill
+                  className="object-cover transition-transform hover:scale-105 duration-500" 
                 />
-                <div className="flex-1 min-w-0 flex flex-col justify-between">
-                  <div className="flex justify-between items-start">
-                    <h4 className="text-[13px] font-bold text-slate-800 leading-tight">System Design Fundamentals</h4>
-                    <span className="px-2 py-0.5 rounded-md bg-indigo-50 text-indigo-500 text-[8px] font-bold whitespace-nowrap">In Progress</span>
-                  </div>
-                  <div>
-                    <div className="flex justify-between items-end mb-1.5">
-                      <span className="text-[10px] font-medium text-slate-500">35% Complete</span>
-                      <span className="text-[10px] font-black text-slate-800">35%</span>
-                    </div>
-                    <div className="h-1.5 bg-slate-50 rounded-full overflow-hidden">
-                      <div className="h-full bg-blue-600 rounded-full" style={{ width: '35%' }}></div>
-                    </div>
-                  </div>
+                <div className="absolute top-3 right-3">
+                   <span className="px-2 py-1 rounded-md bg-white/90 backdrop-blur-sm text-indigo-600 text-[9px] font-bold shadow-sm">In Progress</span>
                 </div>
               </div>
-              <button className="w-full bg-indigo-600 text-white py-2.5 rounded-xl font-bold text-[13px] shadow-lg shadow-indigo-100 hover:bg-indigo-700 transition-all">
-                Continue Lesson
-              </button>
+              
+              <div className="p-4 flex flex-col justify-between flex-1">
+                <div className="mb-4">
+                  <h4 className="text-[14px] font-bold text-slate-800 leading-tight mb-1">System Design Fundamentals</h4>
+                  <p className="text-[10px] text-slate-400 font-medium">Scalability, HLD, LLD & Caching</p>
+                </div>
+                
+                <div className="space-y-3">
+                  <div>
+                    <div className="flex justify-between items-end mb-1.5">
+                      <span className="text-[10px] font-bold text-slate-500">Progress</span>
+                      <span className="text-[11px] font-black text-indigo-600">35%</span>
+                    </div>
+                    <div className="h-2 bg-slate-50 rounded-full overflow-hidden">
+                      <div className="h-full bg-indigo-500 rounded-full shadow-[0_0_8px_rgba(79,70,229,0.3)] transition-all duration-1000" style={{ width: '35%' }}></div>
+                    </div>
+                  </div>
+                  
+                  <button className="w-full bg-indigo-600 text-white py-3 rounded-xl font-bold text-[13px] shadow-lg shadow-indigo-100 hover:bg-indigo-700 transition-all flex items-center justify-center gap-2">
+                    <PlayCircle size={16} />
+                    Continue Lesson
+                  </button>
+                </div>
+              </div>
             </div>
 
-            <button className="mt-auto text-[11px] font-bold text-blue-600 hover:underline flex items-center justify-center gap-1.5">
+            <button className="text-[11px] font-bold text-blue-600 hover:underline flex items-center justify-center gap-1.5">
               View My Courses <ArrowRight size={14} />
             </button>
           </div>

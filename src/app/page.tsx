@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import Header from '@/components/Header';
 import {
   TrendingUp,
@@ -77,10 +78,10 @@ const roleFitData = [
 ];
 
 const companyFitData = [
-  { name: 'TCS', value: 82, status: 'Great Fit', color: 'text-green-600', bg: 'bg-green-50' },
-  { name: 'Infosys', value: 78, status: 'Good Fit', color: 'text-green-600', bg: 'bg-green-50' },
-  { name: 'Zoho', value: 63, status: 'Moderate Fit', color: 'text-orange-500', bg: 'bg-orange-50' },
-  { name: 'Wipro', value: 55, status: 'Build More Skills', color: 'text-slate-500', bg: 'bg-slate-50' },
+  { name: 'TCS', value: 82, status: 'Great Fit', color: 'text-green-600', logo: '/tcs.png' },
+  { name: 'Infosys', value: 78, status: 'Good Fit', color: 'text-green-600', logo: '/infosys.png' },
+  { name: 'Zoho', value: 63, status: 'Moderate Fit', color: 'text-orange-500', logo: '/zoho.png' },
+  { name: 'Wipro', value: 55, status: 'Build More Skills', color: 'text-slate-500', logo: '/wipro.png' },
 ];
 
 export default function Dashboard() {
@@ -108,7 +109,7 @@ export default function Dashboard() {
           {/* Readiness Score */}
           <div className="card-premium h-[280px] flex flex-col items-center p-3 xl:col-span-2">
             <div className="flex justify-between w-full mb-4">
-              <h3 className="text-[11px] font-bold text-slate-800 uppercase tracking-wider">Readiness Score</h3>
+              <h3 className="text-[11px] font-bold text-slate-800 uppercase tracking-wider">Hirescore</h3>
               <Info size={14} className="text-muted" />
             </div>
 
@@ -146,7 +147,7 @@ export default function Dashboard() {
           {/* Probability */}
           <div className="card-premium h-[280px] flex flex-col p-4 xl:col-span-2">
             <div className="flex justify-between w-full mb-8">
-              <h3 className="text-[11px] font-bold text-slate-800 uppercase tracking-wider">Interview Success Probability</h3>
+              <h3 className="text-[11px] font-bold text-slate-800 uppercase tracking-wider">Interview Readiness Score</h3>
               <Info size={14} className="text-muted" />
             </div>
 
@@ -229,8 +230,14 @@ export default function Dashboard() {
             <div className="space-y-0">
               {companyFitData.map((company) => (
                 <div key={company.name} className="flex items-center gap-3 h-12 border-b border-slate-50 last:border-0">
-                  <div className={`w-7 h-7 rounded-full flex items-center justify-center border border-border shadow-sm overflow-hidden bg-white flex-shrink-0`}>
-                    <div className="text-[10px] font-black text-primary-navy">{company.name.substring(0, 2)}</div>
+                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center border border-border shadow-sm overflow-hidden bg-white flex-shrink-0`}>
+                    <Image 
+                      src={company.logo} 
+                      alt={company.name} 
+                      width={32}
+                      height={32}
+                      className="w-full h-full object-contain p-1"
+                    />
                   </div>
                   <div className="text-[10px] font-bold text-slate-700 w-16 truncate">{company.name}</div>
                   <div className="text-[10px] font-black text-slate-900">{company.value}%</div>

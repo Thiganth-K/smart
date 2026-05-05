@@ -368,49 +368,48 @@ export default function ProgressPage() {
           </div>
 
           {/* Time Investment (4 spans) */}
-          <div className="lg:col-span-4 bg-white rounded-3xl border border-slate-100 shadow-sm p-5 h-full">
-            <div className="flex justify-between items-center mb-5">
-              <h3 className="font-bold text-[#0F172A] text-sm">Time Investment</h3>
-              <div className="flex items-center gap-1 text-[9px] font-bold text-slate-400">
-                This Month <ChevronDown size={12} />
+          <div className="lg:col-span-4 bg-white rounded-3xl border border-slate-100 shadow-sm p-6 h-full">
+            <div className="flex justify-between items-center mb-8">
+              <h3 className="font-bold text-[#0F172A] text-base">Time Investment</h3>
+              <div className="flex items-center gap-1.5 text-[11px] font-bold text-slate-400 cursor-pointer hover:text-slate-600 transition-colors">
+                This Month <ChevronDown size={14} />
               </div>
             </div>
-            <div className="flex items-center gap-6">
-              <div className="relative w-28 h-28 flex-shrink-0">
+            <div className="flex items-center gap-10">
+              <div className="relative w-40 h-40 flex-shrink-0">
                 {mounted && (
                   <ResponsiveContainer width="100%" height="100%">
-
-                  <PieChart>
-                    <Pie
-                      data={timeInvestmentData}
-                      cx="50%"
-                      cy="50%"
-                      innerRadius={28}
-                      outerRadius={45}
-                      paddingAngle={5}
-                      dataKey="value"
-                    >
-                      {timeInvestmentData.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={entry.color} />
-                      ))}
-                    </Pie>
-                  </PieChart>
-                </ResponsiveContainer>
+                    <PieChart>
+                      <Pie
+                        data={timeInvestmentData}
+                        cx="50%"
+                        cy="50%"
+                        innerRadius={45}
+                        outerRadius={70}
+                        paddingAngle={5}
+                        dataKey="value"
+                      >
+                        {timeInvestmentData.map((entry, index) => (
+                          <Cell key={`cell-${index}`} fill={entry.color} strokeWidth={0} />
+                        ))}
+                      </Pie>
+                    </PieChart>
+                  </ResponsiveContainer>
                 )}
 
                 <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-                  <span className="text-[12px] font-black text-slate-800 leading-none">48h</span>
-                  <span className="text-[8px] font-bold text-slate-400">30m</span>
+                  <span className="text-xl font-black text-slate-800 leading-none">48h</span>
+                  <span className="text-[12px] font-bold text-slate-400 mt-1">30m</span>
                 </div>
               </div>
-              <div className="flex-1 space-y-2">
+              <div className="flex-1 space-y-4">
                 {timeInvestmentData.map((item) => (
-                  <div key={item.name} className="flex items-center justify-between text-[9px]">
-                    <div className="flex items-center gap-1.5">
-                      <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: item.color }} />
-                      <span className="font-bold text-slate-400 truncate w-16">{item.name}</span>
+                  <div key={item.name} className="flex items-center justify-between text-[11px]">
+                    <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 rounded-full" style={{ backgroundColor: item.color }} />
+                      <span className="font-bold text-slate-500 truncate">{item.name}</span>
                     </div>
-                    <span className="font-black text-slate-700">{item.value}%</span>
+                    <span className="font-black text-slate-700 ml-4">{item.value}%</span>
                   </div>
                 ))}
               </div>

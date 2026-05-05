@@ -13,8 +13,8 @@ export default function RootLayout({
   const isLoginPage = pathname === '/login';
 
   return (
-    <html lang="en">
-      <body className="antialiased">
+    <html lang="en" suppressHydrationWarning>
+      <body className="antialiased" suppressHydrationWarning>
         {!isLoginPage ? (
           <div className="flex min-h-screen">
             <Sidebar />
