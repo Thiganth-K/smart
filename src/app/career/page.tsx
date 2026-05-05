@@ -86,7 +86,7 @@ export default function CareerInsightsPage() {
               </h3>
               <span className="text-[9px] font-bold text-indigo-600 uppercase tracking-widest">Overall Match</span>
             </div>
-            
+
             <div className="space-y-5 flex-1">
               {careerPaths.map((path) => (
                 <div key={path.rank} className="group cursor-pointer">
@@ -115,7 +115,7 @@ export default function CareerInsightsPage() {
                 </div>
               ))}
             </div>
-            
+
             <button className="mt-5 text-[10px] font-bold text-indigo-600 flex items-center justify-center gap-2 hover:gap-3 transition-all">
               Explore more career options <ArrowRight size={14} />
             </button>
@@ -124,7 +124,7 @@ export default function CareerInsightsPage() {
           {/* Career Overview */}
           <div className="lg:col-span-5 bg-white rounded-3xl border border-slate-100 shadow-sm p-5 flex flex-col h-full relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/5 blur-3xl rounded-full -mr-16 -mt-16"></div>
-            
+
             <div className="flex items-start gap-4 mb-4">
               <div className="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center shadow-sm border border-indigo-100 flex-shrink-0">
                 <Briefcase size={24} />
@@ -179,8 +179,8 @@ export default function CareerInsightsPage() {
 
           {/* Career Readiness Gauge */}
           <div className="lg:col-span-3 bg-white rounded-3xl border border-slate-100 shadow-sm p-5 flex flex-col h-full items-center text-center">
-            <h3 className="font-bold text-[#0F172A] text-xs mb-4 w-full text-left">Your Career Readiness</h3>
-            
+            <h3 className="font-bold text-[#0F172A] text-xs mb-4 w-full text-left">Hirescore</h3>
+
             <div className="relative w-40 h-24 flex items-center justify-center mb-1 overflow-hidden">
               <svg viewBox="0 0 200 110" className="w-full h-full">
                 <defs>
@@ -190,11 +190,11 @@ export default function CareerInsightsPage() {
                   </linearGradient>
                 </defs>
                 <path d="M 20 100 A 80 80 0 0 1 180 100" fill="none" stroke="#f1f5f9" strokeWidth="14" strokeLinecap="round" />
-                <path 
-                  d="M 20 100 A 80 80 0 0 1 180 100" 
-                  fill="none" 
-                  stroke="url(#readinessGradient)" 
-                  strokeWidth="14" 
+                <path
+                  d="M 20 100 A 80 80 0 0 1 180 100"
+                  fill="none"
+                  stroke="url(#readinessGradient)"
+                  strokeWidth="14"
                   strokeLinecap="round"
                   strokeDasharray="251.32"
                   strokeDashoffset={251.32 * (1 - 78 / 100)}
@@ -206,7 +206,7 @@ export default function CareerInsightsPage() {
               </div>
             </div>
             <p className="text-[10px] font-bold text-slate-400 mb-4 uppercase tracking-widest">Ready for Full Stack Developer</p>
-            
+
             <div className="w-full space-y-5">
               {[
                 { label: 'Skills', val: 82 },
@@ -259,11 +259,11 @@ export default function CareerInsightsPage() {
                     <span className="text-[10px] font-black text-slate-800">{skill.need}%</span>
                   </div>
                   <div className="relative h-2 w-full bg-slate-50 rounded-full overflow-hidden">
-                    <div 
+                    <div
                       className="absolute left-0 top-0 h-full bg-slate-200 rounded-full transition-all duration-1000"
                       style={{ width: `${skill.need}%` }}
                     />
-                    <div 
+                    <div
                       className="absolute left-0 top-0 h-full bg-indigo-500 rounded-full transition-all duration-1000 z-10"
                       style={{ width: `${skill.have}%` }}
                     />
@@ -281,9 +281,9 @@ export default function CareerInsightsPage() {
           <div className="lg:col-span-4 bg-white rounded-3xl border border-slate-100 shadow-sm p-6 flex flex-col">
             <div className="mb-8">
               <h3 className="font-bold text-[#0F172A] text-sm">Top Skills to Improve</h3>
-              <p className="text-[10px] text-slate-400 font-medium mt-1">Focus on these skills to boost your career readiness.</p>
+              <p className="text-[10px] text-slate-400 font-medium mt-1">Focus on these skills to boost Hirescore.</p>
             </div>
-            
+
             <div className="space-y-5 flex-1">
               {topSkillsToImprove.map((skill) => (
                 <div key={skill.name} className="flex items-center gap-4 group cursor-pointer p-1 rounded-xl hover:bg-slate-50/50 transition-all">
@@ -293,9 +293,8 @@ export default function CareerInsightsPage() {
                   <div className="flex-1 min-w-0">
                     <div className="flex justify-between items-center mb-0.5">
                       <h4 className="text-sm font-bold text-slate-800">{skill.name}</h4>
-                      <span className={`text-[8px] font-bold px-2 py-0.5 rounded-lg border ${
-                        skill.priority === 'High Priority' ? 'border-red-100 text-red-500 bg-red-50' : 'border-orange-100 text-orange-500 bg-orange-50'
-                      }`}>
+                      <span className={`text-[8px] font-bold px-2 py-0.5 rounded-lg border ${skill.priority === 'High Priority' ? 'border-red-100 text-red-500 bg-red-50' : 'border-orange-100 text-orange-500 bg-orange-50'
+                        }`}>
                         {skill.priority}
                       </span>
                     </div>
@@ -313,10 +312,10 @@ export default function CareerInsightsPage() {
           {/* Career Growth Path */}
           <div className="lg:col-span-3 bg-white rounded-3xl border border-slate-100 shadow-sm p-6">
             <h3 className="font-bold text-[#0F172A] text-sm mb-8">Career Growth Path</h3>
-            
+
             <div className="relative space-y-8 pl-8">
               <div className="absolute left-[15px] top-2 bottom-2 w-0.5 border-l-2 border-dashed border-slate-100" />
-              
+
               {growthPath.map((path, idx) => (
                 <div key={idx} className="relative">
                   <div className={`absolute -left-8 top-1 w-4 h-4 rounded-full ${path.color} border-4 border-white shadow-sm z-10`} />
@@ -338,7 +337,7 @@ export default function CareerInsightsPage() {
           {/* Top Companies Hiring */}
           <div className="lg:col-span-6 bg-white rounded-3xl border border-slate-100 shadow-sm p-6 flex flex-col">
             <h3 className="font-bold text-[#0F172A] text-sm mb-8">Top Companies Hiring</h3>
-            
+
             <div className="grid grid-cols-6 gap-4 flex-1 items-center">
               {companies.map((company) => (
                 <div key={company.name} className="flex flex-col items-center gap-3">
@@ -347,9 +346,8 @@ export default function CareerInsightsPage() {
                   </div>
                   <div className="text-center">
                     <p className="text-[10px] font-bold text-slate-800 mb-0.5">{company.name}</p>
-                    <p className={`text-[8px] font-bold uppercase tracking-tighter ${
-                      company.match === 'Very High' ? 'text-green-500' : 'text-blue-500'
-                    }`}>{company.match}</p>
+                    <p className={`text-[8px] font-bold uppercase tracking-tighter ${company.match === 'Very High' ? 'text-green-500' : 'text-blue-500'
+                      }`}>{company.match}</p>
                   </div>
                 </div>
               ))}
@@ -361,7 +359,7 @@ export default function CareerInsightsPage() {
           {/* Explore Career Insights Resources */}
           <div className="lg:col-span-6 bg-white rounded-3xl border border-slate-100 shadow-sm p-6 flex flex-col">
             <h3 className="font-bold text-[#0F172A] text-sm mb-8">Explore Career Insights</h3>
-            
+
             <div className="grid grid-cols-2 gap-4 flex-1">
               {[
                 { title: 'Salary Explorer', desc: 'Compare salaries by role, experience and location', icon: Briefcase, color: 'text-purple-600', bg: 'bg-purple-50' },

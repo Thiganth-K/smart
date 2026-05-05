@@ -75,8 +75,8 @@ export default function LearningHubPage() {
                     />
                   </svg>
                   <div className="absolute flex flex-col items-center">
-                    <span className="text-[44px] font-black text-slate-800 tracking-tighter">68%</span>
-                    <span className="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Overall Progress</span>
+                    <span className="text-[32px] font-black text-slate-800 tracking-tighter">68%</span>
+                    <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Overall Progress</span>
                   </div>
                 </div>
                 <p className="text-[13px] font-medium text-slate-500 mt-8 text-center max-w-[180px] leading-relaxed">

@@ -2,20 +2,20 @@
 
 import React from 'react';
 import Header from '@/components/Header';
-import { 
-  ResponsiveContainer, 
-  RadarChart, 
-  PolarGrid, 
-  PolarAngleAxis, 
-  PolarRadiusAxis, 
+import {
+  ResponsiveContainer,
+  RadarChart,
+  PolarGrid,
+  PolarAngleAxis,
+  PolarRadiusAxis,
   Radar,
   LineChart,
   Line
 } from 'recharts';
-import { 
-  BrainCircuit, 
-  TrendingUp, 
-  Target, 
+import {
+  BrainCircuit,
+  TrendingUp,
+  Target,
   ChevronRight,
   Info,
   Code2,
@@ -54,7 +54,7 @@ export default function SkillIntelligencePage() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header title="Skill Intelligence" />
-      
+
       <div className="p-8">
         <p className="text-muted text-sm font-medium -mt-4 mb-8">Understand your strengths, identify gaps and get personalized recommendations.</p>
 
@@ -74,7 +74,7 @@ export default function SkillIntelligencePage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 mb-6">
           {/* Gauge Chart */}
           <div className="card-premium flex flex-col items-center p-6">
-            <h3 className="text-[13px] font-bold text-slate-800 w-full mb-6 text-left">Overall Skill Index</h3>
+            <h3 className="text-[13px] font-bold text-slate-800 w-full mb-6 text-left">Hirescore</h3>
             <div className="relative w-52 h-32 flex items-center justify-center mb-4 overflow-hidden">
               <svg viewBox="0 0 200 110" className="w-full h-full">
                 <defs>
@@ -86,19 +86,19 @@ export default function SkillIntelligencePage() {
                   </linearGradient>
                 </defs>
                 {/* Background Track */}
-                <path 
-                  d="M 20 100 A 80 80 0 0 1 180 100" 
-                  fill="none" 
-                  stroke="#f1f5f9" 
-                  strokeWidth="18" 
-                  strokeLinecap="round" 
+                <path
+                  d="M 20 100 A 80 80 0 0 1 180 100"
+                  fill="none"
+                  stroke="#f1f5f9"
+                  strokeWidth="18"
+                  strokeLinecap="round"
                 />
                 {/* Active Progress */}
-                <path 
-                  d="M 20 100 A 80 80 0 0 1 180 100" 
-                  fill="none" 
-                  stroke="url(#gaugeGradient)" 
-                  strokeWidth="18" 
+                <path
+                  d="M 20 100 A 80 80 0 0 1 180 100"
+                  fill="none"
+                  stroke="url(#gaugeGradient)"
+                  strokeWidth="18"
                   strokeLinecap="round"
                   strokeDasharray="251.32"
                   strokeDashoffset={251.32 * (1 - 72 / 100)}
@@ -125,31 +125,31 @@ export default function SkillIntelligencePage() {
               {mounted && (
                 <ResponsiveContainer width="100%" height="100%">
 
-                <RadarChart cx="50%" cy="50%" outerRadius="70%" data={radarData}>
-                  <PolarGrid stroke="#e2e8f0" strokeDasharray="3 3" />
-                  <PolarAngleAxis 
-                    dataKey="subject" 
-                    tick={{ fill: '#64748b', fontSize: 8, fontWeight: 600 }} 
-                  />
-                  <PolarRadiusAxis angle={30} domain={[0, 100]} hide tick={false} />
-                  <Radar
-                    name="Your Score"
-                    dataKey="A"
-                    stroke="#6366f1"
-                    fill="#6366f1"
-                    fillOpacity={0.15}
-                    strokeWidth={1.5}
-                  />
-                  <Radar
-                    name="Industry Average"
-                    dataKey="B"
-                    stroke="#94a3b8"
-                    strokeDasharray="3 3"
-                    fill="transparent"
-                    strokeWidth={1}
-                  />
-                </RadarChart>
-              </ResponsiveContainer>
+                  <RadarChart cx="50%" cy="50%" outerRadius="70%" data={radarData}>
+                    <PolarGrid stroke="#e2e8f0" strokeDasharray="3 3" />
+                    <PolarAngleAxis
+                      dataKey="subject"
+                      tick={{ fill: '#64748b', fontSize: 8, fontWeight: 600 }}
+                    />
+                    <PolarRadiusAxis angle={30} domain={[0, 100]} hide tick={false} />
+                    <Radar
+                      name="Your Score"
+                      dataKey="A"
+                      stroke="#6366f1"
+                      fill="#6366f1"
+                      fillOpacity={0.15}
+                      strokeWidth={1.5}
+                    />
+                    <Radar
+                      name="Industry Average"
+                      dataKey="B"
+                      stroke="#94a3b8"
+                      strokeDasharray="3 3"
+                      fill="transparent"
+                      strokeWidth={1}
+                    />
+                  </RadarChart>
+                </ResponsiveContainer>
               )}
             </div>
 
@@ -285,10 +285,9 @@ export default function SkillIntelligencePage() {
                     </td>
                     <td className="px-4 py-2.5 text-center text-[10px] font-bold text-slate-700">{item.per}</td>
                     <td className="px-4 py-2.5 text-center">
-                      <span className={`px-2 py-0.5 rounded text-[9px] font-bold ${
-                        item.level === 'Expert' ? 'bg-green-50 text-green-600' :
-                        item.level === 'Proficient' ? 'bg-green-50/50 text-green-500' : 'bg-orange-50 text-orange-600'
-                      }`}>
+                      <span className={`px-2 py-0.5 rounded text-[9px] font-bold ${item.level === 'Expert' ? 'bg-green-50 text-green-600' :
+                          item.level === 'Proficient' ? 'bg-green-50/50 text-green-500' : 'bg-orange-50 text-orange-600'
+                        }`}>
                         {item.level}
                       </span>
                     </td>
@@ -297,26 +296,25 @@ export default function SkillIntelligencePage() {
                         {mounted && (
                           <ResponsiveContainer width="100%" height="100%">
 
-                          <LineChart data={item.trend.map(val => ({ val }))}>
-                            <Line 
-                              type="monotone" 
-                              dataKey="val" 
-                              stroke={item.score < 60 ? '#fb923c' : '#22c55e'} 
-                              strokeWidth={1.5} 
-                              dot={{ r: 1.5, fill: item.score < 60 ? '#fb923c' : '#22c55e' }} 
-                            />
-                          </LineChart>
-                        </ResponsiveContainer>
+                            <LineChart data={item.trend.map(val => ({ val }))}>
+                              <Line
+                                type="monotone"
+                                dataKey="val"
+                                stroke={item.score < 60 ? '#fb923c' : '#22c55e'}
+                                strokeWidth={1.5}
+                                dot={{ r: 1.5, fill: item.score < 60 ? '#fb923c' : '#22c55e' }}
+                              />
+                            </LineChart>
+                          </ResponsiveContainer>
                         )}
                       </div>
                     </td>
 
                     <td className="px-6 py-2.5 text-right">
-                      <button className={`px-3 py-1 rounded text-[9px] font-bold border transition-colors ${
-                        item.status === 'Improve' 
-                        ? 'border-indigo-100 text-indigo-600 hover:bg-indigo-50' 
-                        : 'border-green-100 text-green-600 hover:bg-green-50'
-                      }`}>
+                      <button className={`px-3 py-1 rounded text-[9px] font-bold border transition-colors ${item.status === 'Improve'
+                          ? 'border-indigo-100 text-indigo-600 hover:bg-indigo-50'
+                          : 'border-green-100 text-green-600 hover:bg-green-50'
+                        }`}>
                         {item.status}
                       </button>
                     </td>
