@@ -37,7 +37,7 @@ const Sidebar = () => {
 
   return (
     <aside className="w-64 h-screen bg-primary-navy text-white flex flex-col fixed left-0 top-0 z-[100] border-r border-white/10" suppressHydrationWarning={true}>
-      <div className="px-4 py-8">
+      <div className="pr-4 pb-6">
         <Logo variant="light" />
       </div>
 
