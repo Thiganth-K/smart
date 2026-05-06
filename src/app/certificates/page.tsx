@@ -48,7 +48,7 @@ const certificates = [
     type: 'Course',
     date: '10 May 2025',
     color: 'from-indigo-500/10 to-purple-500/10',
-    borderColor: 'border-indigo-100',
+    borderColor: 'border-primary-purple/20',
     tagColor: 'bg-blue-50 text-blue-600',
     variant: 'completion'
   },
@@ -225,18 +225,14 @@ export default function CertificatesPage() {
 
   return (
     <div className="flex flex-col min-h-screen bg-[#F8FAFC]" suppressHydrationWarning={true}>
-      <Header title="Certificates" showSearch={false} />
+      <Header 
+        title="Certificates" 
+        description="Track your achievements and showcase your skills." 
+        showSearch={false} 
+      />
 
       <div className="p-8 space-y-8 pb-12">
-        {/* Page Header */}
-        <div className="flex justify-between items-start -mt-4">
-          <div>
-            <h1 className="text-3xl font-bold text-[#0F172A]">Certificates</h1>
-            <p className="text-slate-500 font-medium mt-1">
-              Track your achievements and showcase your skills.
-            </p>
-          </div>
-        </div>
+
 
         {/* Stats Row */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
@@ -249,7 +245,7 @@ export default function CertificatesPage() {
                 <h3 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{stat.label}</h3>
               </div>
               <div className="mb-auto">
-                <div className="text-2xl font-black text-[#0F172A] leading-none mb-1.5">{stat.val}</div>
+                <div className="text-2xl font-black text-brand-navy leading-none mb-1.5">{stat.val}</div>
                 <div className={`text-[10px] font-bold ${stat.trend.includes('↑') ? 'text-green-500' : 'text-blue-500'}`}>
                   {stat.trend}
                 </div>
@@ -265,10 +261,10 @@ export default function CertificatesPage() {
             <div className="flex items-center gap-8 border-b border-slate-100 overflow-x-auto no-scrollbar">
               {['All Certificates', 'Course Certificates', 'Skill Certificates', 'Achievement Certificates', 'Expired Certificates'].map((tab, idx) => (
                 <button key={tab} className={`text-[11px] font-bold pb-4 relative whitespace-nowrap ${
-                  idx === 0 ? 'text-indigo-600' : 'text-slate-400 hover:text-slate-600 transition-colors'
+                  idx === 0 ? 'text-primary-purple' : 'text-slate-400 hover:text-slate-600 transition-colors'
                 }`}>
                   {tab}
-                  {idx === 0 && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-indigo-600 rounded-full" />}
+                  {idx === 0 && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary-purple rounded-full" />}
                 </button>
               ))}
             </div>
@@ -280,7 +276,7 @@ export default function CertificatesPage() {
                 <input 
                   type="text" 
                   placeholder="Search certificates..." 
-                  className="w-full pl-10 pr-4 py-2 bg-white border border-slate-100 rounded-xl text-[11px] font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all shadow-sm"
+                  className="w-full pl-10 pr-4 py-2 bg-white border border-slate-100 rounded-xl text-[11px] font-medium focus:outline-none focus:ring-2 focus:ring-primary-purple/20 focus:border-primary-purple transition-all shadow-sm"
                 />
               </div>
               <div className="flex items-center gap-2">
@@ -289,7 +285,7 @@ export default function CertificatesPage() {
                     {filter} <ChevronDown size={14} className="text-slate-400" />
                   </button>
                 ))}
-                <button className="text-[10px] font-black text-blue-600 hover:underline px-2">Clear Filters</button>
+                <button className="text-[10px] font-black text-primary-purple hover:underline px-2">Clear Filters</button>
               </div>
             </div>
 
@@ -302,7 +298,7 @@ export default function CertificatesPage() {
                   </div>
                   <div className="mt-4 px-1">
                     <div className="flex justify-between items-start mb-1">
-                      <h4 className="text-[12px] font-bold text-slate-800 leading-tight group-hover:text-indigo-600 transition-colors">{cert.title}</h4>
+                      <h4 className="text-[12px] font-bold text-slate-800 leading-tight group-hover:text-primary-purple transition-colors">{cert.title}</h4>
                       <span className={`px-2 py-0.5 rounded-full text-[8px] font-black uppercase ${cert.tagColor}`}>
                         {cert.type}
                       </span>
@@ -310,10 +306,10 @@ export default function CertificatesPage() {
                     <p className="text-[10px] text-slate-400 font-medium mb-3">Completed on {cert.date}</p>
                     <div className="flex items-center justify-between border-t border-slate-100 pt-3">
                       <div className="flex items-center gap-3">
-                         <button className="p-1.5 text-slate-400 hover:text-indigo-600 hover:bg-indigo-50 rounded-lg transition-all" title="Download">
+                         <button className="p-1.5 text-slate-400 hover:text-primary-purple hover:bg-primary-purple/5 rounded-lg transition-all" title="Download">
                            <Download size={14} />
                          </button>
-                         <button className="p-1.5 text-slate-400 hover:text-indigo-600 hover:bg-indigo-50 rounded-lg transition-all" title="Share">
+                         <button className="p-1.5 text-slate-400 hover:text-primary-purple hover:bg-primary-purple/5 rounded-lg transition-all" title="Share">
                            <Share2 size={14} />
                          </button>
                       </div>
@@ -337,7 +333,7 @@ export default function CertificatesPage() {
           <div className="lg:col-span-3 space-y-8">
             {/* Summary Chart */}
             <div className="bg-white rounded-3xl border border-slate-100 shadow-sm p-6">
-              <h3 className="font-bold text-[#0F172A] text-sm mb-6">Your Certificate Summary</h3>
+              <h3 className="font-bold text-brand-navy text-sm mb-6">Your Certificate Summary</h3>
               <div className="relative w-full h-40 mb-6 flex items-center justify-center">
                 {mounted && (
                   <ResponsiveContainer width="100%" height="100%">
@@ -380,8 +376,8 @@ export default function CertificatesPage() {
 
             {/* Why Certificates Matter */}
             <div className="bg-white rounded-3xl border border-slate-100 shadow-sm p-6 relative overflow-hidden">
-               <div className="absolute -top-4 -right-4 w-24 h-24 bg-indigo-50/50 rounded-full blur-2xl" />
-               <h3 className="font-bold text-[#0F172A] text-sm mb-5 relative z-10">Why Certificates Matter?</h3>
+               <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary-purple/5 rounded-full blur-2xl" />
+               <h3 className="font-bold text-brand-navy text-sm mb-5 relative z-10">Why Certificates Matter?</h3>
                <div className="space-y-4 relative z-10">
                  {[
                    'Showcase your skills to employers',
@@ -410,8 +406,8 @@ export default function CertificatesPage() {
             {/* Recent Achievements */}
             <div className="bg-white rounded-3xl border border-slate-100 shadow-sm p-6">
               <div className="flex justify-between items-center mb-6">
-                <h3 className="font-bold text-[#0F172A] text-sm">Recent Achievements</h3>
-                <button className="text-blue-600 text-[10px] font-bold hover:underline">View All</button>
+                <h3 className="font-bold text-brand-navy text-sm">Recent Achievements</h3>
+                <button className="text-primary-purple text-[10px] font-bold hover:underline">View All</button>
               </div>
               <div className="space-y-5">
                 {recentAchievements.map((item, idx) => (
@@ -431,7 +427,7 @@ export default function CertificatesPage() {
 
             {/* Share Success */}
             <div className="bg-slate-900 rounded-3xl p-6 text-white overflow-hidden relative">
-               <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/20 rounded-full blur-3xl" />
+               <div className="absolute top-0 right-0 w-32 h-32 bg-primary-purple/20 rounded-full blur-3xl" />
                <h3 className="text-sm font-bold mb-2">Share Your Success</h3>
                <p className="text-[10px] text-slate-400 mb-6">Download or share your certificates on professional platforms.</p>
                <div className="flex items-center gap-3 mb-6">

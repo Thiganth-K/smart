@@ -3,11 +3,12 @@
 import React from 'react';
 import { Bell, Search, User } from 'lucide-react';
 
-const Header = ({ title = "Dashboard", showSearch = true }: { title?: string, showSearch?: boolean }) => {
+const Header = ({ title = "Dashboard", description, showSearch = true }: { title?: string, description?: string, showSearch?: boolean }) => {
   return (
     <header className="h-20 flex items-center justify-between px-8 bg-background sticky top-0 z-50 border-b border-border" suppressHydrationWarning={true}>
-      <div className="flex items-center gap-4">
-        <h1 className="text-2xl brand-heading text-primary-navy">{title}</h1>
+      <div className="flex flex-col justify-center">
+        <h1 className="text-xl brand-heading text-primary-navy leading-none">{title}</h1>
+        {description && <p className="text-[11px] text-muted font-medium mt-1 leading-none">{description}</p>}
       </div>
       
       <div className="flex-1 flex items-center justify-end gap-4 ml-12">
@@ -27,7 +28,7 @@ const Header = ({ title = "Dashboard", showSearch = true }: { title?: string, sh
 
         <button suppressHydrationWarning className="relative w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-xl bg-white border border-border text-primary-navy hover:bg-slate-50 transition-all">
           <Bell size={20} />
-          <span className="absolute top-2.5 right-2.5 w-4 h-4 bg-accent-red text-white text-[9px] rounded-full flex items-center justify-center border-2 border-white font-bold">
+          <span className="absolute top-2.5 right-2.5 w-4 h-4 bg-primary-purple text-white text-[9px] rounded-full flex items-center justify-center border-2 border-white font-bold">
             3
           </span>
         </button>

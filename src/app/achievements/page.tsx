@@ -45,7 +45,7 @@ const stats = [
 const earnedAchievements = [
   { title: 'First Step', desc: 'Complete your first assessment', date: '10 Apr 2025', points: '+50', icon: CheckCircle2, color: 'text-green-600', bg: 'bg-green-50' },
   { title: '7 Day Streak', desc: 'Maintain a 7 day learning streak', date: '22 Apr 2025', points: '+100', icon: Flame, color: 'text-blue-600', bg: 'bg-blue-50' },
-  { title: 'Assessment Master', desc: 'Complete 10 assessments', date: '05 May 2025', points: '+150', icon: Award, color: 'text-indigo-600', bg: 'bg-indigo-50' },
+  { title: 'Assessment Master', desc: 'Complete 10 assessments', date: '05 May 2025', points: '+150', icon: Award, color: 'text-primary-purple', bg: 'bg-primary-purple/10' },
   { title: 'Practice Pro', desc: 'Answer 500 practice questions', date: '14 May 2025', points: '+150', icon: Target, color: 'text-orange-600', bg: 'bg-orange-50' },
   { title: 'Top Performer', desc: 'Score in top 10% in an assessment', date: '20 May 2025', points: '+200', icon: Star, color: 'text-amber-600', bg: 'bg-amber-50' },
   { title: 'Code Explorer', desc: 'Complete 5 coding challenges', date: '27 May 2025', points: '+100', icon: Code2, color: 'text-red-600', bg: 'bg-red-50' },
@@ -53,14 +53,14 @@ const earnedAchievements = [
   { title: 'Milestone Maker', desc: 'Earn 2000 achievement points', date: '07 Jun 2025', points: '+250', icon: Trophy, color: 'text-purple-600', bg: 'bg-purple-50' },
   { title: 'Daily Hero', desc: 'Complete 5 assessments in a day', date: '12 Jun 2025', points: '+150', icon: Zap, color: 'text-amber-500', bg: 'bg-amber-50' },
   { title: 'Social Butterfly', desc: 'Share 10 certificates', date: '15 Jun 2025', points: '+100', icon: Share2, color: 'text-pink-500', bg: 'bg-pink-50' },
-  { title: 'Night Owl', desc: 'Complete a lesson after 12 AM', date: '18 Jun 2025', points: '+50', icon: Clock, color: 'text-indigo-400', bg: 'bg-indigo-50' },
+  { title: 'Night Owl', desc: 'Complete a lesson after 12 AM', date: '18 Jun 2025', points: '+50', icon: Clock, color: 'text-primary-purple/60', bg: 'bg-primary-purple/10' },
   { title: 'Speed Demon', desc: 'Finish assessment in 5 mins', date: '20 Jun 2025', points: '+200', icon: TrendingUp, color: 'text-red-500', bg: 'bg-red-50' },
 ];
 
 const inProgress = [
   { title: '30 Day Streak', sub: 'Maintain a 30 day learning streak', progress: '12 / 30', points: '+300', icon: Flame, color: 'text-red-500', bg: 'bg-red-50', pct: 40 },
   { title: '100 Assessments', sub: 'Complete 100 assessments', progress: '28 / 100', points: '+500', icon: Award, color: 'text-green-500', bg: 'bg-green-50', pct: 28 },
-  { title: 'Skill Expert', sub: 'Reach level 5 in any 10 skills', progress: '6 / 10', points: '+500', icon: Zap, color: 'text-indigo-500', bg: 'bg-indigo-50', pct: 60 },
+  { title: 'Skill Expert', sub: 'Reach level 5 in any 10 skills', progress: '6 / 10', points: '+500', icon: Zap, color: 'text-primary-purple', bg: 'bg-primary-purple/10', pct: 60 },
   { title: 'All Rounder', sub: 'Improve 20 different skills', progress: '12 / 20', points: '+400', icon: Layout, color: 'text-blue-500', bg: 'bg-blue-50', pct: 60 },
 ];
 
@@ -98,18 +98,14 @@ export default function AchievementsPage() {
 
   return (
     <div className="flex flex-col min-h-screen bg-[#F8FAFC]" suppressHydrationWarning={true}>
-      <Header title="Achievements" showSearch={false} />
+      <Header 
+        title="Achievements" 
+        description="Celebrate your milestones and track your success journey." 
+        showSearch={false} 
+      />
 
       <div className="p-8 space-y-8 pb-12">
-        {/* Page Header */}
-        <div className="flex justify-between items-start -mt-4">
-          <div>
-            <h1 className="text-3xl font-bold text-[#0F172A]">Achievements</h1>
-            <p className="text-slate-500 font-medium mt-1">
-              Celebrate your milestones and track your success journey.
-            </p>
-          </div>
-        </div>
+
 
         {/* Stats Row */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
@@ -121,7 +117,7 @@ export default function AchievementsPage() {
                 </div>
                 <div className="min-w-0">
                   <h3 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1 truncate">{stat.label}</h3>
-                  <div className="text-lg font-black text-[#0F172A] leading-none mb-1">{stat.val}</div>
+                  <div className="text-lg font-black text-brand-navy leading-none mb-1">{stat.val}</div>
                   <div className={`text-[10px] font-bold truncate ${stat.trend ? 'text-green-500' : 'text-slate-400'}`}>
                     {stat.sub || stat.trend}
                   </div>
@@ -147,10 +143,10 @@ export default function AchievementsPage() {
               <div className="flex items-center gap-8 border-b border-slate-100">
                 {['All Achievements', 'In Progress', 'Locked', 'Special Achievements'].map((tab, idx) => (
                   <button key={tab} className={`text-[11px] font-bold pb-4 relative ${
-                    idx === 0 ? 'text-indigo-600' : 'text-slate-400 hover:text-slate-600 transition-colors'
+                    idx === 0 ? 'text-primary-purple' : 'text-slate-400 hover:text-slate-600 transition-colors'
                   }`}>
                     {tab}
-                    {idx === 0 && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-indigo-600 rounded-full" />}
+                    {idx === 0 && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary-purple rounded-full" />}
                   </button>
                 ))}
               </div>
@@ -161,7 +157,7 @@ export default function AchievementsPage() {
                   <input 
                     type="text" 
                     placeholder="Search achievements..." 
-                    className="w-full pl-10 pr-4 py-2 bg-white border border-slate-100 rounded-xl text-[11px] font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all"
+                    className="w-full pl-10 pr-4 py-2 bg-white border border-slate-100 rounded-xl text-[11px] font-medium focus:outline-none focus:ring-2 focus:ring-primary-purple/20 focus:border-primary-purple transition-all"
                   />
                 </div>
                 <div className="flex items-center gap-2">
@@ -183,7 +179,7 @@ export default function AchievementsPage() {
               <h3 className="font-black text-slate-800 text-sm uppercase tracking-wider">Earned Achievements</h3>
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                 {earnedAchievements.map((item, idx) => (
-                  <div key={idx} className="bg-white rounded-3xl border border-slate-100 shadow-sm p-6 flex flex-col items-center text-center group hover:border-indigo-100 transition-all hover:shadow-md relative overflow-hidden">
+                  <div key={idx} className="bg-white rounded-3xl border border-slate-100 shadow-sm p-6 flex flex-col items-center text-center group hover:border-primary-purple/20 transition-all hover:shadow-md relative overflow-hidden">
                     <div className="absolute top-0 right-0 p-3">
                        <span className="text-[10px] font-black text-amber-500 flex items-center gap-0.5">
                          {item.points} <Star size={10} fill="currentColor" />
@@ -202,7 +198,7 @@ export default function AchievementsPage() {
                 ))}
               </div>
               <div className="flex justify-center pt-4">
-                <button suppressHydrationWarning className="px-6 py-2 bg-white border border-slate-200 rounded-xl text-[11px] font-bold text-indigo-600 hover:bg-indigo-50 transition-colors shadow-sm flex items-center gap-2">
+                <button suppressHydrationWarning className="px-6 py-2 bg-white border border-slate-200 rounded-xl text-[11px] font-bold text-primary-purple hover:bg-primary-purple/5 transition-colors shadow-sm flex items-center gap-2">
                   View More Achievements <ChevronDown size={14} />
                 </button>
               </div>
@@ -242,7 +238,7 @@ export default function AchievementsPage() {
           <div className="lg:col-span-3 space-y-8">
             {/* Achievement Summary */}
             <div className="bg-white rounded-3xl border border-slate-100 shadow-sm p-6">
-              <h3 className="font-bold text-[#0F172A] text-sm mb-6">Your Achievement Summary</h3>
+              <h3 className="font-bold text-brand-navy text-sm mb-6">Your Achievement Summary</h3>
               <div className="relative w-full h-40 mb-6 flex items-center justify-center">
                 {mounted && (
                   <ResponsiveContainer width="100%" height="100%">
@@ -286,7 +282,7 @@ export default function AchievementsPage() {
 
             {/* Longest Streak Card */}
             <div className="bg-white rounded-3xl border border-slate-100 shadow-sm p-6">
-              <h3 className="font-bold text-[#0F172A] text-sm mb-5">Longest Streak</h3>
+              <h3 className="font-bold text-brand-navy text-sm mb-5">Longest Streak</h3>
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-orange-50 text-orange-500 rounded-xl flex items-center justify-center">
@@ -314,12 +310,12 @@ export default function AchievementsPage() {
             {/* Leaderboard */}
             <div className="bg-white rounded-3xl border border-slate-100 shadow-sm p-6">
               <div className="flex justify-between items-center mb-6">
-                <h3 className="font-bold text-[#0F172A] text-sm">Leaderboard (This Month)</h3>
+                <h3 className="font-bold text-brand-navy text-sm">Leaderboard (This Month)</h3>
                 <button suppressHydrationWarning className="text-blue-600 text-[10px] font-bold hover:underline">View All</button>
               </div>
               <div className="space-y-4">
                 {leaderboard.map((user, idx) => (
-                  <div key={idx} className={`flex items-center gap-3 p-2 rounded-2xl transition-all ${user.highlight ? 'bg-indigo-50 border border-indigo-100 shadow-sm' : ''}`}>
+                  <div key={idx} className={`flex items-center gap-3 p-2 rounded-2xl transition-all ${user.highlight ? 'bg-primary-purple/10 border border-primary-purple/20 shadow-sm' : ''}`}>
                     <span className={`text-[10px] font-black w-4 ${idx === 0 ? 'text-amber-500' : idx === 1 ? 'text-slate-400' : 'text-slate-300'}`}>{user.rank}</span>
                     <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center border-2 border-white shadow-sm overflow-hidden flex-shrink-0">
                        <Image 
@@ -342,7 +338,7 @@ export default function AchievementsPage() {
             {/* Recently Unlocked */}
             <div className="bg-white rounded-3xl border border-slate-100 shadow-sm p-6">
               <div className="flex justify-between items-center mb-6">
-                <h3 className="font-bold text-[#0F172A] text-sm">Recently Unlocked</h3>
+                <h3 className="font-bold text-brand-navy text-sm">Recently Unlocked</h3>
                 <button suppressHydrationWarning className="text-blue-600 text-[10px] font-bold hover:underline">View All</button>
               </div>
               <div className="space-y-4">

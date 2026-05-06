@@ -36,10 +36,13 @@ const learningPath = [
 export default function LearningHubPage() {
   return (
     <div className="flex flex-col min-h-screen">
-      <Header title="Learning Hub" />
+      <Header 
+        title="Learning Hub" 
+        description="Personalized learning to strengthen your skills and accelerate your career."
+      />
       
       <div className="p-8">
-        <p className="text-muted text-sm font-medium -mt-4 mb-8">Personalized learning to strengthen your skills and accelerate your career.</p>
+
 
         {/* Top Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-8 items-stretch">
@@ -108,7 +111,7 @@ export default function LearningHubPage() {
                   </div>
                 </div>
 
-                <button className="flex items-center gap-2 text-[13px] font-bold text-blue-600 hover:gap-3 transition-all group mt-2">
+                <button className="flex items-center gap-2 text-[13px] font-bold text-primary-purple hover:gap-3 transition-all group mt-2">
                   View Roadmap <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
                 </button>
               </div>
@@ -144,7 +147,7 @@ export default function LearningHubPage() {
                   className="object-cover transition-transform hover:scale-105 duration-500" 
                 />
                 <div className="absolute top-3 right-3">
-                   <span className="px-2 py-1 rounded-md bg-white/90 backdrop-blur-sm text-indigo-600 text-[9px] font-bold shadow-sm">In Progress</span>
+                   <span className="px-2 py-1 rounded-md bg-white/90 backdrop-blur-sm text-primary-purple text-[9px] font-bold shadow-sm">In Progress</span>
                 </div>
               </div>
               
@@ -158,14 +161,14 @@ export default function LearningHubPage() {
                   <div>
                     <div className="flex justify-between items-end mb-1.5">
                       <span className="text-[10px] font-bold text-slate-500">Progress</span>
-                      <span className="text-[11px] font-black text-indigo-600">35%</span>
+                      <span className="text-[11px] font-black text-primary-purple">35%</span>
                     </div>
                     <div className="h-2 bg-slate-50 rounded-full overflow-hidden">
-                      <div className="h-full bg-indigo-500 rounded-full shadow-[0_0_8px_rgba(79,70,229,0.3)] transition-all duration-1000" style={{ width: '35%' }}></div>
+                      <div className="h-full bg-primary-purple rounded-full shadow-[0_0_8px_rgba(79,70,229,0.3)] transition-all duration-1000" style={{ width: '35%' }}></div>
                     </div>
                   </div>
                   
-                  <button className="w-full bg-indigo-600 text-white py-3 rounded-xl font-bold text-[13px] shadow-lg shadow-indigo-100 hover:bg-indigo-700 transition-all flex items-center justify-center gap-2">
+                  <button className="w-full bg-primary-purple text-white py-3 rounded-xl font-bold text-[13px] shadow-lg shadow-primary-purple/20 hover:bg-primary-light transition-all flex items-center justify-center gap-2">
                     <PlayCircle size={16} />
                     Continue Lesson
                   </button>
@@ -173,7 +176,7 @@ export default function LearningHubPage() {
               </div>
             </div>
 
-            <button className="text-[11px] font-bold text-blue-600 hover:underline flex items-center justify-center gap-1.5">
+            <button className="text-[11px] font-bold text-primary-purple hover:underline flex items-center justify-center gap-1.5">
               View My Courses <ArrowRight size={14} />
             </button>
           </div>
@@ -185,7 +188,7 @@ export default function LearningHubPage() {
           <div className="flex-1 flex flex-col">
             <div className="flex justify-between items-center mb-6">
               <div className="flex gap-8 border-b border-slate-100 w-full">
-                <button className="text-[13px] font-bold text-indigo-600 border-b-2 border-indigo-600 pb-3">In Progress (4)</button>
+                <button className="text-[13px] font-bold text-primary-purple border-b-2 border-primary-purple pb-3">In Progress (4)</button>
                 <button className="text-[13px] font-medium text-slate-400 hover:text-slate-600 pb-3 transition-colors">Upcoming (2)</button>
                 <button className="text-[13px] font-medium text-slate-400 hover:text-slate-600 pb-3 transition-colors">Completed (3)</button>
               </div>
@@ -194,12 +197,12 @@ export default function LearningHubPage() {
             <div className="flex-1 flex flex-col justify-between">
               <div className="space-y-4">
                 {[
-                  { name: 'Data Structures & Algorithms', desc: 'Master the fundamentals of DSA with hands-on practice.', progress: 65, lessons: '28 / 45', time: '12h 30m', color: 'text-indigo-600', bg: 'bg-indigo-50', icon: Code2 },
+                  { name: 'Data Structures & Algorithms', desc: 'Master the fundamentals of DSA with hands-on practice.', progress: 65, lessons: '28 / 45', time: '12h 30m', color: 'text-primary-purple', bg: 'bg-primary-purple/10', icon: Code2 },
                   { name: 'System Design Fundamentals', desc: 'Learn how to design scalable and reliable systems.', progress: 35, lessons: '16 / 40', time: '6h 15m', color: 'text-green-600', bg: 'bg-green-50', icon: Layout },
                   { name: 'Database Management Systems', desc: 'Understand SQL, normalization, indexing and more.', progress: 50, lessons: '20 / 40', time: '8h 10m', color: 'text-orange-600', bg: 'bg-orange-50', icon: Database },
                   { name: 'Advanced JS Patterns', desc: 'Deep dive into closures, prototypes, and async patterns.', progress: 25, lessons: '10 / 35', time: '4h 45m', color: 'text-blue-600', bg: 'bg-blue-50', icon: Sparkles },
                 ].map((item, i) => (
-                  <div key={i} className="card-premium flex items-center gap-6 group hover:border-indigo-100 transition-all p-4">
+                  <div key={i} className="card-premium flex items-center gap-6 group hover:border-primary-purple/20 transition-all p-4">
                     <div className={`w-14 h-14 rounded-2xl ${item.bg} ${item.color} flex items-center justify-center flex-shrink-0 transition-transform group-hover:scale-105`}>
                       <item.icon size={24} />
                     </div>
@@ -232,7 +235,7 @@ export default function LearningHubPage() {
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
-                      <button className="bg-white border border-indigo-100 text-indigo-600 px-4 py-2 rounded-xl text-[11px] font-bold hover:bg-indigo-50 transition-all">
+                      <button className="bg-white border border-primary-purple/20 text-primary-purple px-4 py-2 rounded-xl text-[11px] font-bold hover:bg-primary-purple/5 transition-all">
                         Continue
                       </button>
                       <button className="text-slate-300 hover:text-slate-500">
@@ -242,7 +245,7 @@ export default function LearningHubPage() {
                   </div>
                 ))}
               </div>
-              <button className="mt-auto pt-6 text-[11px] font-bold text-blue-600 hover:underline flex items-center justify-center gap-1.5">
+              <button className="mt-auto pt-6 text-[11px] font-bold text-primary-purple hover:underline flex items-center justify-center gap-1.5">
                 View All Enrolled Courses <ArrowRight size={14} />
               </button>
             </div>
@@ -253,7 +256,7 @@ export default function LearningHubPage() {
               <h4 className="text-[12px] font-bold text-slate-800 mb-5">Recommended</h4>
               <div className="space-y-5">
                 {[
-                  { name: 'Advanced SQL', desc: 'Optimize complex queries.', meta: 'Intermediate • 4h 30m', icon: Database, color: 'text-indigo-600', bg: 'bg-indigo-50' },
+                  { name: 'Advanced SQL', desc: 'Optimize complex queries.', meta: 'Intermediate • 4h 30m', icon: Database, color: 'text-primary-purple', bg: 'bg-primary-purple/10' },
                   { name: 'React.js Basics', desc: 'Build modern UIs.', meta: 'Beginner • 5h 20m', icon: Code2, color: 'text-blue-600', bg: 'bg-blue-50' },
                   { name: 'Operating Systems', desc: 'Understand OS concepts.', meta: 'Intermediate • 6h 15m', icon: Layout, color: 'text-orange-600', bg: 'bg-orange-50' }
                 ].map((r, i) => (
@@ -275,7 +278,7 @@ export default function LearningHubPage() {
               <h4 className="text-[12px] font-bold text-slate-800 mb-5">Featured Learning Resources</h4>
               <div className="space-y-4">
                 {[
-                  { name: 'Top 50 DSA Questions', desc: 'Curated list of must-do problems.', icon: BookOpen, color: 'text-indigo-600', bg: 'bg-indigo-50' },
+                  { name: 'Top 50 DSA Questions', desc: 'Curated list of must-do problems.', icon: BookOpen, color: 'text-primary-purple', bg: 'bg-primary-purple/10' },
                   { name: 'System Design Cheatsheet', desc: 'High-level guide with diagrams.', icon: Layout, color: 'text-green-600', bg: 'bg-green-50' },
                   { name: 'Frontend Developer Roadmap', desc: 'Step-by-step learning path.', icon: Sparkles, color: 'text-red-500', bg: 'bg-red-50' }
                 ].map((res, i) => (
@@ -302,7 +305,7 @@ export default function LearningHubPage() {
             {[
               { title: 'Strengthen DSA', desc: '200+ problems', status: 'Completed', icon: CheckCircle2, color: 'text-green-500', bg: 'bg-green-50', border: 'border-green-500' },
               { title: 'Learn System Design', desc: 'Core concepts', status: 'Completed', icon: CheckCircle2, color: 'text-green-500', bg: 'bg-green-50', border: 'border-green-500' },
-              { title: 'Build Projects', desc: 'Real-world projects', status: 'In Progress', icon: PlayCircle, color: 'text-indigo-600', bg: 'bg-indigo-50', border: 'border-indigo-600' },
+              { title: 'Build Projects', desc: 'Real-world projects', status: 'In Progress', icon: PlayCircle, color: 'text-primary-purple', bg: 'bg-primary-purple/10', border: 'border-primary-purple' },
               { title: 'Advanced Topics', desc: 'Deep dive', status: 'Upcoming', icon: Sparkles, color: 'text-slate-300', bg: 'bg-white', border: 'border-slate-100' },
               { title: 'Interview Ready', desc: 'Mock interviews', status: 'Upcoming', icon: Trophy, color: 'text-slate-300', bg: 'bg-white', border: 'border-slate-100' }
             ].map((step, i) => (
@@ -314,23 +317,23 @@ export default function LearningHubPage() {
                 <p className="text-[9px] text-slate-400 font-medium mb-2">{step.desc}</p>
                 <span className={`px-2 py-0.5 rounded text-[8px] font-bold ${
                   step.status === 'Completed' ? 'bg-green-50 text-green-600' :
-                  step.status === 'In Progress' ? 'bg-indigo-50 text-indigo-600' : 'bg-slate-50 text-slate-400'
+                  step.status === 'In Progress' ? 'bg-primary-purple/10 text-primary-purple' : 'bg-slate-50 text-slate-400'
                 }`}>
                   {step.status}
                 </span>
               </div>
             ))}
           </div>
-          <button className="w-full mt-10 text-[11px] font-bold text-blue-600 hover:underline flex items-center justify-center gap-1.5">
+          <button className="w-full mt-10 text-[11px] font-bold text-primary-purple hover:underline flex items-center justify-center gap-1.5">
             View Full Roadmap <ArrowRight size={14} />
           </button>
         </div>
 
         {/* Bottom AI Modules */}
         <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <div className="card-premium !bg-indigo-50/30 border-indigo-100 p-6 flex items-center justify-between">
+          <div className="card-premium !bg-primary-purple/10/30 border-primary-purple/20 p-6 flex items-center justify-between">
             <div className="flex items-center gap-5">
-              <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-sm text-indigo-600">
+              <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-sm text-primary-purple">
                 <Bot size={28} />
               </div>
               <div>
@@ -340,7 +343,7 @@ export default function LearningHubPage() {
                 </p>
               </div>
             </div>
-            <button className="bg-indigo-600 text-white px-5 py-2.5 rounded-xl text-[11px] font-bold hover:bg-indigo-700 transition-all shadow-md shadow-indigo-100">
+            <button className="bg-primary-purple text-white px-5 py-2.5 rounded-xl text-[11px] font-bold hover:bg-primary-light transition-all shadow-md shadow-primary-purple/20">
               Ask AI Assistant
             </button>
           </div>

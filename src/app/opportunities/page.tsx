@@ -27,7 +27,7 @@ import {
 } from 'lucide-react';
 
 const stats = [
-  { label: 'Active Opportunities', val: '48', trend: '↑ 12 new this week', color: 'text-indigo-600', bg: 'bg-indigo-50', icon: Briefcase },
+  { label: 'Active Opportunities', val: '48', trend: '↑ 12 new this week', color: 'text-primary-purple', bg: 'bg-primary-purple/10', icon: Briefcase },
   { label: 'Applied', val: '12', trend: '2 in assessment', color: 'text-green-600', bg: 'bg-green-50', icon: CheckCircle2 },
   { label: 'In Progress', val: '5', trend: 'Assessments / Interviews', color: 'text-orange-600', bg: 'bg-orange-50', icon: Clock },
   { label: 'Shortlisted', val: '3', trend: 'Keep it up!', color: 'text-blue-600', bg: 'bg-blue-50', icon: UserCheck },
@@ -74,8 +74,8 @@ const opportunities = [
     ctc: '₹3.5 - 6 LPA',
     deadline: '26 May - 31 May',
     tags: ['B.E/B.Tech', '2024, 2025 Batch', 'Multiple Roles'],
-    color: 'text-indigo-600',
-    bg: 'bg-indigo-50'
+    color: 'text-primary-purple',
+    bg: 'bg-primary-purple/10'
   },
   {
     company: 'Zoho',
@@ -118,7 +118,7 @@ const tracker = [
   { company: 'Infosys Systems Engineer', status: 'In Progress', date: 'Shortlisted for Test', color: 'text-blue-600', bg: 'bg-blue-50' },
   { company: 'Wipro Project Engineer', status: 'In Progress', date: 'Test Scheduled on 27 May', color: 'text-blue-600', bg: 'bg-blue-50' },
   { company: 'Zoho Internship', status: 'Applied', date: 'Applied on 18 May 2025', color: 'text-green-600', bg: 'bg-green-50' },
-  { company: 'Amazon SDE I', status: 'Shortlisted', date: 'Resume Shortlisted', color: 'text-indigo-600', bg: 'bg-indigo-50' },
+  { company: 'Amazon SDE I', status: 'Shortlisted', date: 'Resume Shortlisted', color: 'text-primary-purple', bg: 'bg-primary-purple/10' },
 ];
 
 const upcomingDeadlines = [
@@ -130,18 +130,14 @@ const upcomingDeadlines = [
 export default function OpportunitiesPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#F8FAFC]" suppressHydrationWarning={true}>
-      <Header title="Opportunities" showSearch={false} />
+      <Header 
+        title="Opportunities" 
+        description="Discover and apply to the best job drives, internships and career opportunities." 
+        showSearch={false} 
+      />
 
       <div className="p-8 space-y-8 pb-12">
-        {/* Page Header */}
-        <div className="flex justify-between items-start -mt-4">
-          <div>
-            <h1 className="text-3xl font-bold text-[#0F172A]">Opportunities</h1>
-            <p className="text-slate-500 font-medium mt-1">
-              Discover and apply to the best job drives, internships and career opportunities.
-            </p>
-          </div>
-        </div>
+
 
         {/* Stats Row */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
@@ -153,7 +149,7 @@ export default function OpportunitiesPage() {
               <div className="min-w-0">
                 <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">{stat.label}</p>
                 <div className="flex flex-col">
-                  <span className="text-xl font-black text-[#0F172A] tracking-tight leading-none mb-1">{stat.val}</span>
+                  <span className="text-xl font-black text-brand-navy tracking-tight leading-none mb-1">{stat.val}</span>
                   <p className={`text-[9px] font-bold ${stat.label === 'Offers' ? 'text-green-500' : 'text-slate-400'} whitespace-nowrap`}>
                     {stat.trend}
                   </p>
@@ -172,10 +168,10 @@ export default function OpportunitiesPage() {
             <div className="flex items-center gap-8 border-b border-slate-100 overflow-x-auto no-scrollbar pb-1">
               {['All Opportunities', 'Job Drives', 'Internships', 'Apprenticeships', 'On-campus', 'Off-campus'].map((tab, idx) => (
                 <button key={tab} className={`text-[11px] font-bold whitespace-nowrap pb-3 relative ${
-                  idx === 0 ? 'text-indigo-600' : 'text-slate-400 hover:text-slate-600 transition-colors'
+                  idx === 0 ? 'text-primary-purple' : 'text-slate-400 hover:text-slate-600 transition-colors'
                 }`}>
                   {tab}
-                  {idx === 0 && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-indigo-600 rounded-full" />}
+                  {idx === 0 && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary-purple rounded-full" />}
                 </button>
               ))}
             </div>
@@ -205,7 +201,7 @@ export default function OpportunitiesPage() {
 
             {/* Opportunities List */}
             <div className="space-y-4">
-              <h3 className="text-sm font-bold text-[#0F172A] mb-4">Latest Opportunities</h3>
+              <h3 className="text-sm font-bold text-brand-navy mb-4">Latest Opportunities</h3>
               <div className="bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden">
                 <div className="divide-y divide-slate-50">
                   {opportunities.map((opp, idx) => (
@@ -275,14 +271,14 @@ export default function OpportunitiesPage() {
                         {/* Actions */}
                         <div className="col-span-2 flex flex-col items-end gap-2">
                           <div className="flex gap-2">
-                            <button className="px-5 py-2 bg-indigo-600 text-white rounded-xl text-[11px] font-black shadow-sm hover:shadow-indigo-200 hover:scale-105 transition-all">
+                            <button className="px-5 py-2 bg-primary-purple text-white rounded-xl text-[11px] font-black shadow-sm hover:shadow-indigo-200 hover:scale-105 transition-all">
                               Apply Now
                             </button>
-                            <button className="w-9 h-9 border border-slate-100 rounded-xl flex items-center justify-center text-slate-400 hover:text-indigo-600 hover:bg-indigo-50 transition-all">
+                            <button className="w-9 h-9 border border-slate-100 rounded-xl flex items-center justify-center text-slate-400 hover:text-primary-purple hover:bg-primary-purple/5 transition-all">
                               <Bookmark size={18} />
                             </button>
                           </div>
-                          <button className="text-[10px] font-bold text-indigo-600 hover:underline mr-11">View Details</button>
+                          <button className="text-[10px] font-bold text-primary-purple hover:underline mr-11">View Details</button>
                         </div>
                       </div>
                     </div>
@@ -300,8 +296,8 @@ export default function OpportunitiesPage() {
             {/* Recommended for You */}
             <div className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
               <div className="px-5 py-4 border-b border-slate-50 flex justify-between items-center">
-                <h3 className="font-bold text-[#0F172A] text-xs">Recommended for You</h3>
-                <button className="text-indigo-600 text-[10px] font-bold hover:underline">View All</button>
+                <h3 className="font-bold text-brand-navy text-xs">Recommended for You</h3>
+                <button className="text-primary-purple text-[10px] font-bold hover:underline">View All</button>
               </div>
               <div className="divide-y divide-slate-50">
                 {recommendations.map((rec, idx) => (
@@ -336,8 +332,8 @@ export default function OpportunitiesPage() {
             {/* Application Tracker */}
             <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-5">
               <div className="flex justify-between items-center mb-6">
-                <h3 className="font-bold text-[#0F172A] text-xs">Application Tracker</h3>
-                <button className="text-indigo-600 text-[10px] font-bold hover:underline">View All</button>
+                <h3 className="font-bold text-brand-navy text-xs">Application Tracker</h3>
+                <button className="text-primary-purple text-[10px] font-bold hover:underline">View All</button>
               </div>
               <div className="space-y-6 relative">
                 <div className="absolute left-[5px] top-1 bottom-1 w-0.5 bg-slate-50" />
@@ -358,12 +354,12 @@ export default function OpportunitiesPage() {
 
             {/* Improve to Unlock More */}
             <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-5 flex flex-col">
-              <h3 className="font-bold text-[#0F172A] text-xs mb-1">Improve to Unlock More</h3>
+              <h3 className="font-bold text-brand-navy text-xs mb-1">Improve to Unlock More</h3>
               <p className="text-[10px] text-slate-400 font-medium mb-6">Strengthen these skills to get more opportunities.</p>
               
               <div className="grid grid-cols-4 gap-3 mb-6">
                 {[
-                  { label: 'DSA', level: 'Advanced', icon: Target, color: 'text-indigo-600', bg: 'bg-indigo-50' },
+                  { label: 'DSA', level: 'Advanced', icon: Target, color: 'text-primary-purple', bg: 'bg-primary-purple/10' },
                   { label: 'System Design', level: 'Intermediate', icon: FileText, color: 'text-purple-600', bg: 'bg-purple-50' },
                   { label: 'SQL', level: 'Intermediate', icon: Database, color: 'text-blue-600', bg: 'bg-blue-50' },
                   { label: 'Communication', level: 'Beginner', icon: HelpCircle, color: 'text-orange-600', bg: 'bg-orange-50' },
@@ -378,7 +374,7 @@ export default function OpportunitiesPage() {
                 ))}
               </div>
 
-              <button className="w-full py-2.5 bg-indigo-600 text-white rounded-xl text-[11px] font-black shadow-sm hover:shadow-indigo-200 transition-all">
+              <button className="w-full py-2.5 bg-primary-purple text-white rounded-xl text-[11px] font-black shadow-sm hover:shadow-indigo-200 transition-all">
                 Go to Skill Intelligence
               </button>
             </div>

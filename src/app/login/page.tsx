@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React from 'react';
 import { 
@@ -17,7 +17,7 @@ import Logo from '@/components/Logo';
 export default function LoginPage() {
   return (
     <div className="flex min-h-screen bg-white">
-      <div className="flex-1 bg-primary-navy text-white p-16 flex flex-col relative overflow-hidden hidden lg:flex">
+      <div className="flex-1 bg-brand-navy text-white p-16 flex flex-col relative overflow-hidden hidden lg:flex">
         <Logo variant="light" className="h-12 mb-20 relative z-10" />
         
         <div className="relative z-10 mt-auto mb-20">
@@ -98,7 +98,7 @@ export default function LoginPage() {
               <Link href="/forgot" className="text-sm font-black text-accent-red hover:underline">Forgot Password?</Link>
             </div>
 
-            <button type="button" className="w-full bg-primary-navy text-white py-4 rounded-2xl font-black text-lg flex items-center justify-center gap-3 shadow-xl shadow-primary-navy/20 hover:bg-slate-800 transition-all">
+            <button type="button" className="w-full bg-brand-navy text-white py-4 rounded-2xl font-black text-lg flex items-center justify-center gap-3 shadow-xl shadow-primary-navy/20 hover:bg-slate-800 transition-all">
               Sign In <ArrowRight size={20} />
             </button>
           </form>

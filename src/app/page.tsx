@@ -201,7 +201,7 @@ export default function Dashboard() {
           <div className="card-premium h-[280px] flex flex-col p-4 xl:col-span-3">
             <div className="flex justify-between items-center mb-6">
               <h3 className="text-[11px] font-bold text-slate-800 uppercase tracking-wider">Role Fit Summary</h3>
-              <button className="text-[10px] font-bold text-blue-600 hover:underline">View All</button>
+              <button className="text-[10px] font-bold text-primary-purple hover:underline">View All</button>
             </div>
 
             <div className="space-y-0">
@@ -224,7 +224,7 @@ export default function Dashboard() {
           <div className="card-premium h-[280px] flex flex-col p-4 xl:col-span-2">
             <div className="flex justify-between items-center mb-6">
               <h3 className="text-[11px] font-bold text-slate-800 uppercase tracking-wider">Top Company Fit</h3>
-              <button className="text-[10px] font-bold text-blue-600 hover:underline">View All</button>
+              <button className="text-[10px] font-bold text-primary-purple hover:underline">View All</button>
             </div>
 
             <div className="space-y-0">
@@ -510,7 +510,7 @@ export default function Dashboard() {
                   <div className="text-[11px] font-black text-primary-navy w-12 text-center">{perf.score}</div>
                   <div className={`text-[10px] font-bold ${
                     perf.grade === 'Excellent' ? 'text-green-600' : 
-                    perf.grade === 'Great' ? 'text-green-500' : 'text-blue-500'
+                    perf.grade === 'Great' ? 'text-green-500' : 'text-primary-purple'
                   } w-20 text-right`}>
                     {perf.grade}
                   </div>
@@ -560,7 +560,7 @@ export default function Dashboard() {
               {[
                 { icon: Star, color: 'text-red-500', border: 'border-red-900/20' },
                 { icon: Code2, color: 'text-yellow-500', border: 'border-yellow-900/20' },
-                { icon: Target, color: 'text-blue-500', border: 'border-blue-900/20' },
+                { icon: Target, color: 'text-primary-purple', border: 'border-primary-purple/20' },
                 { icon: Flame, color: 'text-orange-500', border: 'border-orange-900/20' },
                 { icon: Crown, color: 'text-amber-500', border: 'border-amber-900/20' },
               ].map((badge, i) => (
@@ -583,8 +583,8 @@ export default function Dashboard() {
 
         <div className="card-premium bg-gradient-to-br from-indigo-50/50 to-purple-50/50 p-6 mb-6 border-slate-100 flex flex-col min-h-[160px] relative">
           <div className="flex items-center gap-6 mb-4">
-            <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-sm border border-indigo-100">
-              <Bot size={28} className="text-indigo-600" />
+            <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-sm border border-primary-purple/20">
+              <Bot size={28} className="text-primary-purple" />
             </div>
             <div>
               <h3 className="text-base font-bold text-primary-navy leading-tight">AI Recommendation for You</h3>
@@ -598,7 +598,7 @@ export default function Dashboard() {
             <p className="text-[13px] text-slate-600 font-medium leading-relaxed max-w-3xl">
               Based on your recent performance in <span className="text-primary-navy font-bold">SQL</span> and <span className="text-primary-navy font-bold">Python</span>, we've identified key areas for improvement. Focus on <span className="font-bold text-primary-navy">System Design</span> and <span className="font-bold text-primary-navy">Advanced DSA</span> to become interview ready.
             </p>
-            <button className="bg-indigo-600 text-white text-[12px] font-bold px-8 py-3 rounded-xl hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100 flex items-center gap-2 flex-shrink-0">
+            <button className="bg-primary-purple text-white text-[12px] font-bold px-8 py-3 rounded-xl hover:bg-primary-light transition-all shadow-lg shadow-primary-purple/20 flex items-center gap-2 flex-shrink-0">
               Ask AI Assistant
             </button>
           </div>

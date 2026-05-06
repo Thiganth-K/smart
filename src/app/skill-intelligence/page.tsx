@@ -53,10 +53,13 @@ export default function SkillIntelligencePage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <Header title="Skill Intelligence" />
+      <Header 
+        title="Skill Intelligence" 
+        description="Understand your strengths, identify gaps and get personalized recommendations."
+      />
 
       <div className="p-8">
-        <p className="text-muted text-sm font-medium -mt-4 mb-8">Understand your strengths, identify gaps and get personalized recommendations.</p>
+
 
         {/* Tabs */}
         <div className="border-b border-border mb-8">
@@ -155,7 +158,7 @@ export default function SkillIntelligencePage() {
 
             <div className="flex justify-center items-center gap-3 mt-1">
               <div className="flex items-center gap-1">
-                <div className="w-1.5 h-1.5 rounded-full bg-indigo-500" />
+                <div className="w-1.5 h-1.5 rounded-full bg-primary-purple" />
                 <span className="text-[8px] font-bold text-slate-500">Your Score</span>
               </div>
               <div className="flex items-center gap-1">
@@ -230,7 +233,7 @@ export default function SkillIntelligencePage() {
         <div className="card-premium mb-8 !p-0 overflow-hidden">
           <div className="px-6 py-4 border-b border-slate-50 flex justify-between items-center bg-white">
             <h3 className="text-[14px] font-bold text-slate-800">Detailed Skill Breakdown</h3>
-            <button className="text-[10px] font-bold text-blue-600 hover:underline">View All Skills</button>
+            <button className="text-[10px] font-bold text-primary-purple hover:underline">View All Skills</button>
           </div>
           <div className="overflow-x-auto">
             <table className="w-full text-left">
@@ -247,7 +250,7 @@ export default function SkillIntelligencePage() {
               </thead>
               <tbody className="divide-y divide-slate-50">
                 {[
-                  { name: 'Data Structures', score: 76, avg: 68, per: '78th', level: 'Proficient', trend: [65, 70, 72, 78, 80, 76], status: 'Improve', color: 'text-indigo-600', bg: 'bg-indigo-50', icon: Code2 },
+                  { name: 'Data Structures', score: 76, avg: 68, per: '78th', level: 'Proficient', trend: [65, 70, 72, 78, 80, 76], status: 'Improve', color: 'text-primary-purple', bg: 'bg-primary-purple/10', icon: Code2 },
                   { name: 'Algorithms', score: 62, avg: 64, per: '62nd', level: 'Proficient', trend: [55, 60, 65, 62, 68, 62], status: 'Improve', color: 'text-blue-600', bg: 'bg-blue-50', icon: BrainCircuit },
                   { name: 'Python Programming', score: 85, avg: 72, per: '88th', level: 'Expert', trend: [75, 80, 82, 85, 88, 85], status: 'Maintain', color: 'text-green-600', bg: 'bg-green-50', icon: Code2 },
                   { name: 'SQL', score: 78, avg: 70, per: '80th', level: 'Proficient', trend: [70, 72, 75, 78, 80, 78], status: 'Maintain', color: 'text-emerald-600', bg: 'bg-emerald-50', icon: Database },
@@ -312,7 +315,7 @@ export default function SkillIntelligencePage() {
 
                     <td className="px-6 py-2.5 text-right">
                       <button className={`px-3 py-1 rounded text-[9px] font-bold border transition-colors ${item.status === 'Improve'
-                          ? 'border-indigo-100 text-indigo-600 hover:bg-indigo-50'
+                          ? 'border-primary-purple/20 text-primary-purple hover:bg-primary-purple/5'
                           : 'border-green-100 text-green-600 hover:bg-green-50'
                         }`}>
                         {item.status}
@@ -336,7 +339,7 @@ export default function SkillIntelligencePage() {
           <div className="card-premium p-6 flex flex-col">
             <div className="flex justify-between items-center mb-6">
               <h3 className="text-[14px] font-bold text-slate-800">Skill Readiness for Roles</h3>
-              <button className="text-[10px] font-bold text-blue-600 hover:underline">View All Roles</button>
+              <button className="text-[10px] font-bold text-primary-purple hover:underline">View All Roles</button>
             </div>
             <div className="space-y-7 flex-1 flex flex-col justify-center">
               {[
@@ -391,7 +394,7 @@ export default function SkillIntelligencePage() {
             {[
               { title: '1. Strengthen DSA', desc: 'Solve 200+ problems', icon: BrainCircuit, color: 'text-green-600', bg: 'bg-green-50' },
               { title: '2. Learn System Design', desc: 'Complete 10+ modules', icon: Layout, color: 'text-orange-600', bg: 'bg-orange-50' },
-              { title: '3. Build Projects', desc: 'Apply your learnings', icon: Code2, color: 'text-indigo-600', bg: 'bg-indigo-50' },
+              { title: '3. Build Projects', desc: 'Apply your learnings', icon: Code2, color: 'text-primary-purple', bg: 'bg-primary-purple/10' },
               { title: '4. Practice Mock Interviews', desc: 'Get interview ready', icon: ShieldCheck, color: 'text-blue-600', bg: 'bg-blue-50' }
             ].map((step, idx) => (
               <React.Fragment key={idx}>
@@ -412,7 +415,7 @@ export default function SkillIntelligencePage() {
               </React.Fragment>
             ))}
             <div className="lg:ml-6 flex-shrink-0 w-full lg:w-auto">
-              <button className="w-full lg:w-auto px-6 py-2.5 rounded-xl border-2 border-indigo-100 text-indigo-600 text-[11px] font-bold hover:bg-indigo-50 transition-all flex items-center justify-center gap-2">
+              <button className="w-full lg:w-auto px-6 py-2.5 rounded-xl border-2 border-primary-purple/20 text-primary-purple text-[11px] font-bold hover:bg-primary-purple/5 transition-all flex items-center justify-center gap-2">
                 View Full Roadmap
               </button>
             </div>

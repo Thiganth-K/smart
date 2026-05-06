@@ -51,10 +51,13 @@ export default function AssessmentsPage() {
   return (
     <div className="flex flex-col min-h-screen" suppressHydrationWarning={true}>
 
-      <Header title="Assessments" />
+      <Header 
+        title="Assessments" 
+        description="Evaluate your skills, track performance and improve continuously."
+      />
 
       <div className="p-8">
-        <p className="text-muted text-sm font-medium -mt-4 mb-8">Evaluate your skills, track performance and improve continuously.</p>
+
 
         {/* Stats Row */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-8">
@@ -125,7 +128,7 @@ export default function AssessmentsPage() {
                   </thead>
                   <tbody className="divide-y divide-slate-50">
                     {[
-                      { name: 'Data Structures - Advanced', topics: 'Arrays, Linked List, Stack, Queue, Trees', type: 'Subject', diff: 'Hard', time: '90m', qs: 30, att: 2, score: '82%', ile: '92%', status: 'Completed', icon: Code2, color: 'text-indigo-600', bg: 'bg-indigo-50' },
+                      { name: 'Data Structures - Advanced', topics: 'Arrays, Linked List, Stack, Queue, Trees', type: 'Subject', diff: 'Hard', time: '90m', qs: 30, att: 2, score: '82%', ile: '92%', status: 'Completed', icon: Code2, color: 'text-primary-purple', bg: 'bg-primary-purple/10' },
                       { name: 'SQL Advanced Test', topics: 'Joins, Window Functions, Subqueries', type: 'Subject', diff: 'Med', time: '60m', qs: 25, att: 1, score: '76%', ile: '78%', status: 'Completed', icon: Database, color: 'text-orange-600', bg: 'bg-orange-50' },
                       { name: 'TCS NQT Mock Test', topics: 'Quant, Reasoning, Coding', type: 'Comp', diff: 'Med', time: '120m', qs: 100, att: 1, score: '71%', ile: '76%', status: 'Completed', icon: Building2, color: 'text-blue-600', bg: 'bg-blue-50' },
                       { name: 'Aptitude - Quantitative', topics: 'Percentages, Profit & Loss, Time', type: 'Subj', diff: 'Easy', time: '45m', qs: 20, att: 2, score: '84%', ile: '94%', status: 'Completed', icon: BrainCircuit, color: 'text-green-600', bg: 'bg-green-50' },
@@ -183,7 +186,7 @@ export default function AssessmentsPage() {
                                 Continue
                               </button>
                             ) : (
-                              <button className="px-2 py-1 border border-blue-100 text-blue-600 rounded text-[8px] font-bold hover:bg-blue-50">
+                              <button className="px-2 py-1 border border-primary-purple/20 text-primary-purple rounded text-[8px] font-bold hover:bg-primary-purple/5">
                                 Start
                               </button>
                             )}
@@ -207,7 +210,7 @@ export default function AssessmentsPage() {
             {/* Smart Insights Section */}
             <div className="card-premium !p-6 bg-gradient-to-br from-white to-slate-50/30 flex-1">
               <div className="flex items-center gap-2 mb-6">
-                <div className="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center">
+                <div className="w-8 h-8 rounded-lg bg-primary-purple/10 text-primary-purple flex items-center justify-center">
                   <Sparkles size={18} />
                 </div>
                 <h3 className="text-[14px] font-bold text-slate-800">Smart Insights</h3>
@@ -252,7 +255,7 @@ export default function AssessmentsPage() {
                       <p className="text-[11px] text-slate-600 font-medium leading-relaxed mb-2">
                         {insight.desc}
                       </p>
-                      <button className="text-[10px] font-bold text-blue-600 hover:gap-2 transition-all flex items-center gap-1 group">
+                      <button className="text-[10px] font-bold text-primary-purple hover:gap-2 transition-all flex items-center gap-1 group">
                         {insight.link} <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
                       </button>
                     </div>
@@ -267,11 +270,11 @@ export default function AssessmentsPage() {
             <div className="card-premium !p-4">
               <div className="flex justify-between items-center mb-4">
                 <h4 className="text-[11px] font-bold text-slate-800">Recommended for You</h4>
-                <button className="text-[9px] font-bold text-blue-600 hover:underline">View All</button>
+                <button className="text-[9px] font-bold text-primary-purple hover:underline">View All</button>
               </div>
               <div className="space-y-4">
                 {[
-                  { title: 'System Design Mock Test', sub: 'Improve your design skills', impact: 'High Impact', time: '90 min', icon: Database, color: 'text-indigo-600', bg: 'bg-indigo-50' },
+                  { title: 'System Design Mock Test', sub: 'Improve your design skills', impact: 'High Impact', time: '90 min', icon: Database, color: 'text-primary-purple', bg: 'bg-primary-purple/10' },
                   { title: 'Advanced DSA Practice', sub: 'Focus on Trees & Graphs', impact: 'High Impact', time: '60 min', icon: Code2, color: 'text-green-600', bg: 'bg-green-50' },
                   { title: 'Database Optimization Test', sub: 'Query tuning & indexing', impact: 'Med Impact', time: '45 min', icon: ShieldCheck, color: 'text-orange-600', bg: 'bg-orange-50' },
                 ].map((item, i) => (
@@ -339,7 +342,7 @@ export default function AssessmentsPage() {
             <div className="card-premium !p-4 flex-1">
               <div className="flex justify-between items-center mb-4">
                 <h4 className="text-[11px] font-bold text-slate-800">Your Recent Performance</h4>
-                <button className="text-[9px] font-bold text-blue-600 hover:underline">View All</button>
+                <button className="text-[9px] font-bold text-primary-purple hover:underline">View All</button>
               </div>
               <div className="overflow-hidden">
                 <table className="w-full text-left">
@@ -367,7 +370,7 @@ export default function AssessmentsPage() {
                   </tbody>
                 </table>
               </div>
-              <button className="w-full mt-4 py-2 border border-slate-100 rounded-lg text-blue-600 text-[9px] font-bold hover:bg-slate-50 transition-all flex items-center justify-center gap-2">
+              <button className="w-full mt-4 py-2 border border-slate-100 rounded-lg text-primary-purple text-[9px] font-bold hover:bg-slate-50 transition-all flex items-center justify-center gap-2">
                 View Detailed Performance <ArrowRight size={12} />
               </button>
             </div>

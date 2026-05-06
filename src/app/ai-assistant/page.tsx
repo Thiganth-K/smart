@@ -110,25 +110,19 @@ export default function AIAssistantPage() {
 
   return (
     <div className="flex flex-col min-h-screen bg-[#F8FAFC]" suppressHydrationWarning={true}>
-      <Header title="AI Assistant" showSearch={false} />
+      <Header 
+        title="AI Assistant" 
+        description="Your intelligent career companion to guide, support and help you grow." 
+        showSearch={false} 
+      />
 
       <div className="p-8 space-y-8 pb-12">
-        {/* Page Header */}
-        <div className="flex justify-between items-start -mt-4">
-          <div>
-            <h1 className="text-3xl font-bold text-[#0F172A] flex items-center gap-3">
-              AI Assistant <Sparkles size={24} className="text-indigo-600" />
-            </h1>
-            <p className="text-slate-500 font-medium mt-1">
-              Your intelligent career companion to guide, support and help you grow.
-            </p>
-          </div>
-        </div>
+
 
         {/* Capabilities Row */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
           {capabilities.map((item, idx) => (
-            <div key={idx} className="bg-white rounded-2xl p-5 border border-slate-100 shadow-[0_2px_4px_rgba(0,0,0,0.02)] flex items-center gap-4 group cursor-pointer hover:border-indigo-100 transition-all">
+            <div key={idx} className="bg-white rounded-2xl p-5 border border-slate-100 shadow-[0_2px_4px_rgba(0,0,0,0.02)] flex items-center gap-4 group cursor-pointer hover:border-primary-purple/20 transition-all">
               <div className={`w-11 h-11 ${item.bg} ${item.color} rounded-xl flex items-center justify-center flex-shrink-0 transition-transform group-hover:scale-110 shadow-sm`}>
                 <item.icon size={22} />
               </div>
@@ -156,7 +150,7 @@ export default function AIAssistantPage() {
                     <div className={`max-w-[80%] space-y-4 ${msg.role === 'user' ? 'order-1' : 'order-2'}`}>
                       <div className={`p-5 rounded-2xl text-[13px] font-medium leading-relaxed ${
                         msg.role === 'user' 
-                          ? 'bg-indigo-600 text-white shadow-indigo-100 shadow-xl rounded-tr-none' 
+                          ? 'bg-primary-purple text-white shadow-primary-purple/20 shadow-xl rounded-tr-none' 
                           : 'bg-slate-50 text-slate-800 rounded-tl-none border border-slate-100'
                       }`}>
                         {msg.content}
@@ -166,7 +160,7 @@ export default function AIAssistantPage() {
                             {msg.careerPaths.map((path) => (
                               <div key={path.id} className="bg-white rounded-xl p-4 border border-slate-100 shadow-sm flex items-center justify-between">
                                 <div className="flex items-center gap-4">
-                                  <span className="text-[11px] font-black text-indigo-600 bg-indigo-50 w-6 h-6 rounded-lg flex items-center justify-center">{path.id}</span>
+                                  <span className="text-[11px] font-black text-primary-purple bg-primary-purple/10 w-6 h-6 rounded-lg flex items-center justify-center">{path.id}</span>
                                   <div>
                                     <h5 className="font-bold text-slate-800 text-[12px]">{path.name}</h5>
                                     <div className="flex gap-2 mt-1">
@@ -186,7 +180,7 @@ export default function AIAssistantPage() {
                           <div className="flex gap-3 mt-6">
                             {msg.actions.map((action, i) => (
                               <button key={action} suppressHydrationWarning className={`px-4 py-2 rounded-xl text-[11px] font-bold transition-all ${
-                                i === 0 ? 'bg-indigo-600 text-white hover:bg-indigo-700 shadow-lg shadow-indigo-100' : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-50'
+                                i === 0 ? 'bg-primary-purple text-white hover:bg-primary-light shadow-lg shadow-primary-purple/20' : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-50'
                               }`}>
                                 {action}
                               </button>
@@ -198,8 +192,8 @@ export default function AIAssistantPage() {
                       {msg.suggestions && (
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                           {msg.suggestions.map((s, i) => (
-                            <button key={i} suppressHydrationWarning className="text-left p-3 rounded-xl border border-slate-100 bg-white hover:border-indigo-200 hover:bg-indigo-50 transition-all text-[11px] font-bold text-slate-600 flex items-center gap-2 group">
-                              <MessageSquare size={14} className="text-indigo-400 group-hover:text-indigo-600" />
+                            <button key={i} suppressHydrationWarning className="text-left p-3 rounded-xl border border-slate-100 bg-white hover:border-primary-purple/30 hover:bg-primary-purple/5 transition-all text-[11px] font-bold text-slate-600 flex items-center gap-2 group">
+                              <MessageSquare size={14} className="text-primary-purple/60 group-hover:text-primary-purple" />
                               {s}
                             </button>
                           ))}
@@ -218,18 +212,18 @@ export default function AIAssistantPage() {
                       type="text" 
                       suppressHydrationWarning
                       placeholder="Ask anything about careers, skills, learning, jobs..." 
-                      className="w-full pl-5 pr-14 py-4 bg-white border border-slate-100 rounded-2xl text-[13px] font-medium focus:outline-none focus:ring-4 focus:ring-indigo-500/5 focus:border-indigo-500 transition-all shadow-sm"
+                      className="w-full pl-5 pr-14 py-4 bg-white border border-slate-100 rounded-2xl text-[13px] font-medium focus:outline-none focus:ring-4 focus:ring-primary-purple/5 focus:border-primary-purple transition-all shadow-sm"
                     />
                     <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-2">
-                       <button suppressHydrationWarning className="p-2 text-slate-400 hover:text-indigo-600 transition-colors">
+                       <button suppressHydrationWarning className="p-2 text-slate-400 hover:text-primary-purple transition-colors">
                          <Paperclip size={18} />
                        </button>
-                       <button suppressHydrationWarning className="p-2 text-slate-400 hover:text-indigo-600 transition-colors">
+                       <button suppressHydrationWarning className="p-2 text-slate-400 hover:text-primary-purple transition-colors">
                          <Mic size={18} />
                        </button>
                     </div>
                   </div>
-                  <button suppressHydrationWarning className="p-4 bg-indigo-600 text-white rounded-2xl shadow-lg shadow-indigo-100 hover:bg-indigo-700 transition-all hover:scale-105 active:scale-95">
+                  <button suppressHydrationWarning className="p-4 bg-primary-purple text-white rounded-2xl shadow-lg shadow-primary-purple/20 hover:bg-primary-light transition-all hover:scale-105 active:scale-95">
                     <Send size={20} />
                   </button>
                 </div>
@@ -241,13 +235,13 @@ export default function AIAssistantPage() {
             <div className="space-y-6">
               <div className="flex justify-between items-center">
                 <h3 className="font-black text-slate-800 text-sm uppercase tracking-wider">Popular Questions</h3>
-                <button suppressHydrationWarning className="text-blue-600 text-[10px] font-bold hover:underline">View All</button>
+                <button suppressHydrationWarning className="text-primary-purple text-[10px] font-bold hover:underline">View All</button>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {popularQuestions.map((q, idx) => (
-                  <button key={idx} suppressHydrationWarning className="bg-white border border-slate-100 rounded-2xl p-4 text-left group hover:border-indigo-100 hover:shadow-sm transition-all flex items-center justify-between">
+                  <button key={idx} suppressHydrationWarning className="bg-white border border-slate-100 rounded-2xl p-4 text-left group hover:border-primary-purple/20 hover:shadow-sm transition-all flex items-center justify-between">
                     <span className="text-[11px] font-bold text-slate-600">{q}</span>
-                    <ArrowRight size={14} className="text-slate-300 group-hover:text-indigo-500 transition-colors" />
+                    <ArrowRight size={14} className="text-slate-300 group-hover:text-primary-purple transition-colors" />
                   </button>
                 ))}
               </div>
@@ -259,8 +253,8 @@ export default function AIAssistantPage() {
             {/* My Insights */}
             <div className="bg-white rounded-3xl border border-slate-100 shadow-sm p-6">
               <div className="flex justify-between items-center mb-6">
-                <h3 className="font-bold text-[#0F172A] text-sm">My Insights</h3>
-                <button suppressHydrationWarning className="text-blue-600 text-[10px] font-bold hover:underline">View All</button>
+                <h3 className="font-bold text-brand-navy text-sm">My Insights</h3>
+                <button suppressHydrationWarning className="text-primary-purple text-[10px] font-bold hover:underline">View All</button>
               </div>
               <div className="flex items-center gap-6 mb-8">
                 <div className="relative w-24 h-24 flex-shrink-0">
@@ -323,7 +317,7 @@ export default function AIAssistantPage() {
             </div>
 
             {/* Motivational Card */}
-            <div className="bg-gradient-to-br from-indigo-600 to-purple-700 rounded-3xl p-6 text-white relative overflow-hidden">
+            <div className="bg-gradient-to-br from-primary-purple to-primary-light rounded-3xl p-6 text-white relative overflow-hidden">
                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-3xl" />
                <div className="relative z-10">
                  <div className="flex justify-between items-start mb-4">
@@ -339,8 +333,8 @@ export default function AIAssistantPage() {
             {/* Recommended for You */}
             <div className="bg-white rounded-3xl border border-slate-100 shadow-sm p-6">
               <div className="flex justify-between items-center mb-6">
-                <h3 className="font-bold text-[#0F172A] text-sm">Recommended for You</h3>
-                <button className="text-blue-600 text-[10px] font-bold hover:underline">View All</button>
+                <h3 className="font-bold text-brand-navy text-sm">Recommended for You</h3>
+                <button className="text-primary-purple text-[10px] font-bold hover:underline">View All</button>
               </div>
               <div className="space-y-4">
                 {recommendedContent.map((item, idx) => (
@@ -362,10 +356,10 @@ export default function AIAssistantPage() {
 
             {/* Quick Actions */}
             <div className="space-y-4">
-               <h3 className="font-bold text-[#0F172A] text-sm">Quick Actions</h3>
+               <h3 className="font-bold text-brand-navy text-sm">Quick Actions</h3>
                <div className="grid grid-cols-2 gap-3">
                  {quickActions.map((action, idx) => (
-                   <button key={idx} className="bg-white border border-slate-100 rounded-2xl p-4 flex flex-col items-start gap-3 hover:border-indigo-100 hover:shadow-sm transition-all group text-left">
+                   <button key={idx} className="bg-white border border-slate-100 rounded-2xl p-4 flex flex-col items-start gap-3 hover:border-primary-purple/20 hover:shadow-sm transition-all group text-left">
                      <div className={`w-9 h-9 ${action.bg} ${action.color} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform`}>
                        <action.icon size={18} />
                      </div>

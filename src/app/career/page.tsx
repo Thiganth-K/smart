@@ -21,9 +21,9 @@ import {
 } from 'lucide-react';
 
 const careerPaths = [
-  { rank: 1, name: 'Full Stack Developer', match: 92, tags: ['High Demand', 'Great Growth'], color: 'text-indigo-600', bg: 'bg-indigo-50' },
-  { rank: 2, name: 'Backend Developer', match: 87, tags: ['High Demand', 'Stable Growth'], color: 'text-blue-600', bg: 'bg-blue-50' },
-  { rank: 3, name: 'Software Engineer', match: 82, tags: ['High Demand', 'Great Growth'], color: 'text-orange-600', bg: 'bg-orange-50' },
+  { rank: 1, name: 'Full Stack Developer', match: 92, tags: ['High Demand', 'Great Growth'], color: 'text-primary-purple', bg: 'bg-primary-purple/10' },
+                  { rank: 2, name: 'Backend Developer', match: 87, tags: ['High Demand', 'Stable Growth'], color: 'text-primary-purple', bg: 'bg-primary-purple/10' },
+  { rank: 3, name: 'Software Engineer', match: 82, tags: ['High Demand', 'Great Growth'], color: 'text-accent-cyan', bg: 'bg-accent-cyan/10' },
 ];
 
 const skillsData = [
@@ -45,7 +45,7 @@ const topSkillsToImprove = [
 ];
 
 const growthPath = [
-  { years: '1-2 Years', role: 'Junior Developer', desc: 'Build strong fundamentals and hands-on experience', color: 'bg-indigo-500' },
+  { years: '1-2 Years', role: 'Junior Developer', desc: 'Build strong fundamentals and hands-on experience', color: 'bg-primary-purple' },
   { years: '2-4 Years', role: 'Developer', desc: 'Work on complex features and lead small projects', color: 'bg-blue-500' },
   { years: '4-7 Years', role: 'Senior Developer', desc: 'Architect scalable solutions and mentor others', color: 'bg-green-500' },
   { years: '7+ Years', role: 'Tech Lead / Architect', desc: 'Lead teams and drive technical decisions', color: 'bg-orange-500' },
@@ -63,34 +63,30 @@ const companies = [
 export default function CareerInsightsPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#F8FAFC]">
-      <Header title="Career Insights" showSearch={false} />
+      <Header 
+        title="Career Insights" 
+        description="Discover the best career paths for you based on your skills, interests and performance." 
+        showSearch={false} 
+      />
 
       <div className="p-8 space-y-8 pb-12">
-        {/* Page Header */}
-        <div className="flex justify-between items-start -mt-4">
-          <div>
-            <h1 className="text-3xl font-bold text-[#0F172A]">Career Insights</h1>
-            <p className="text-slate-500 font-medium mt-1">
-              Discover the best career paths for you based on your skills, interests and performance.
-            </p>
-          </div>
-        </div>
+
 
         {/* Top Section: Career Paths & Overview */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           {/* Best Fit Career Paths */}
           <div className="lg:col-span-4 bg-white rounded-3xl border border-slate-100 shadow-sm p-5 flex flex-col h-full">
             <div className="flex justify-between items-center mb-5">
-              <h3 className="font-bold text-[#0F172A] text-xs flex items-center gap-2">
+              <h3 className="font-bold text-brand-navy text-xs flex items-center gap-2 font-sora">
                 Your Best Fit Career Paths <Info size={14} className="text-slate-300" />
               </h3>
-              <span className="text-[9px] font-bold text-indigo-600 uppercase tracking-widest">Overall Match</span>
+              <span className="text-[9px] font-bold text-primary-purple uppercase tracking-widest font-inter">Overall Match</span>
             </div>
 
             <div className="space-y-5 flex-1">
               {careerPaths.map((path) => (
                 <div key={path.rank} className="group cursor-pointer">
-                  <div className="flex items-center gap-4 p-4 rounded-2xl border border-slate-50 hover:border-indigo-100 hover:bg-indigo-50/30 transition-all">
+                  <div className="flex items-center gap-4 p-4 rounded-2xl border border-slate-50 hover:border-primary-purple/20 hover:bg-primary-purple/5/30 transition-all">
                     <div className={`w-10 h-10 ${path.bg} ${path.color} rounded-xl flex items-center justify-center font-bold text-lg`}>
                       {path.rank}
                     </div>
@@ -107,31 +103,31 @@ export default function CareerInsightsPage() {
                         ))}
                       </div>
                       <div className="mt-3 h-1 w-full bg-slate-100 rounded-full overflow-hidden">
-                        <div className="h-full bg-indigo-500 rounded-full" style={{ width: `${path.match}%` }} />
+                        <div className="h-full bg-primary-purple rounded-full" style={{ width: `${path.match}%` }} />
                       </div>
                     </div>
-                    <ChevronRight size={16} className="text-slate-300 group-hover:text-indigo-500 transition-colors" />
+                    <ChevronRight size={16} className="text-slate-300 group-hover:text-primary-purple transition-colors" />
                   </div>
                 </div>
               ))}
             </div>
 
-            <button className="mt-5 text-[10px] font-bold text-indigo-600 flex items-center justify-center gap-2 hover:gap-3 transition-all">
+            <button className="mt-5 text-[10px] font-bold text-primary-purple flex items-center justify-center gap-2 hover:gap-3 transition-all">
               Explore more career options <ArrowRight size={14} />
             </button>
           </div>
 
           {/* Career Overview */}
           <div className="lg:col-span-5 bg-white rounded-3xl border border-slate-100 shadow-sm p-5 flex flex-col h-full relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/5 blur-3xl rounded-full -mr-16 -mt-16"></div>
+            <div className="absolute top-0 right-0 w-32 h-32 bg-primary-purple/5 blur-3xl rounded-full -mr-16 -mt-16"></div>
 
             <div className="flex items-start gap-4 mb-4">
-              <div className="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center shadow-sm border border-indigo-100 flex-shrink-0">
+              <div className="w-12 h-12 bg-primary-purple/10 text-primary-purple rounded-2xl flex items-center justify-center shadow-sm border border-primary-purple/20 flex-shrink-0">
                 <Briefcase size={24} />
               </div>
               <div>
                 <div className="flex items-center gap-3 mb-1">
-                  <h3 className="text-lg font-bold text-[#0F172A]">Full Stack Developer</h3>
+                  <h3 className="text-lg font-bold text-brand-navy">Full Stack Developer</h3>
                   <span className="text-[8px] font-black px-2 py-0.5 rounded-lg bg-green-50 text-green-600 uppercase tracking-widest">Top Match</span>
                 </div>
                 <p className="text-[11px] text-slate-500 font-medium leading-relaxed">
@@ -144,7 +140,7 @@ export default function CareerInsightsPage() {
               {[
                 { label: 'Avg. Salary (India)', val: '₹8.5 LPA', icon: DollarSign, color: 'text-purple-600', bg: 'bg-purple-50' },
                 { label: 'Job Demand', val: 'Very High', icon: TrendingUp, color: 'text-green-600', bg: 'bg-green-50' },
-                { label: 'Career Growth', val: 'Excellent', icon: Map, color: 'text-blue-600', bg: 'bg-blue-50' },
+                { label: 'Career Growth', val: 'Excellent', icon: Map, color: 'text-primary-purple', bg: 'bg-primary-purple/10' },
               ].map((stat) => (
                 <div key={stat.label} className="flex flex-col items-center text-center p-2.5 rounded-2xl bg-slate-50/50 border border-slate-100">
                   <div className={`w-7 h-7 ${stat.bg} ${stat.color} rounded-lg flex items-center justify-center mb-1.5`}>
@@ -156,8 +152,8 @@ export default function CareerInsightsPage() {
               ))}
             </div>
 
-            <div className="bg-indigo-50/40 rounded-2xl p-4 mb-5 border border-indigo-100/30">
-              <h4 className="text-[10px] font-black text-indigo-900 uppercase tracking-widest mb-3">Why it's a good fit for you?</h4>
+            <div className="bg-primary-purple/5 rounded-2xl p-4 mb-5 border border-primary-purple/15">
+              <h4 className="text-[10px] font-black text-primary-purple uppercase tracking-widest mb-3">Why it's a good fit for you?</h4>
               <div className="space-y-2.5">
                 {[
                   'Strong in Programming, Problem Solving and SQL',
@@ -172,14 +168,14 @@ export default function CareerInsightsPage() {
               </div>
             </div>
 
-            <button className="mt-auto text-[10px] font-bold text-indigo-600 flex items-center justify-center gap-2 hover:gap-3 transition-all py-1.5">
+            <button className="mt-auto text-[10px] font-bold text-primary-purple flex items-center justify-center gap-2 hover:gap-3 transition-all py-1.5">
               View Career Details <ArrowRight size={14} />
             </button>
           </div>
 
           {/* Career Readiness Gauge */}
           <div className="lg:col-span-3 bg-white rounded-3xl border border-slate-100 shadow-sm p-5 flex flex-col h-full items-center text-center">
-            <h3 className="font-bold text-[#0F172A] text-xs mb-4 w-full text-left">Hirescore</h3>
+            <h3 className="font-bold text-brand-navy text-xs mb-4 w-full text-left">Hirescore</h3>
 
             <div className="relative w-40 h-24 flex items-center justify-center mb-1 overflow-hidden">
               <svg viewBox="0 0 200 110" className="w-full h-full">
@@ -202,7 +198,7 @@ export default function CareerInsightsPage() {
                 />
               </svg>
               <div className="absolute top-[65%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-                <span className="text-[32px] font-black text-[#0F172A] leading-none">78%</span>
+                <span className="text-[32px] font-black text-brand-navy leading-none">78%</span>
               </div>
             </div>
             <p className="text-[10px] font-bold text-slate-400 mb-4 uppercase tracking-widest">Ready for Full Stack Developer</p>
@@ -220,13 +216,13 @@ export default function CareerInsightsPage() {
                     <span className="text-[10px] font-black text-slate-800">{item.val}%</span>
                   </div>
                   <div className="h-1 w-full bg-slate-50 rounded-full overflow-hidden">
-                    <div className="h-full bg-indigo-500 rounded-full" style={{ width: `${item.val}%` }} />
+                    <div className="h-full bg-primary-purple rounded-full" style={{ width: `${item.val}%` }} />
                   </div>
                 </div>
               ))}
             </div>
 
-            <button className="mt-6 text-[9px] font-bold text-indigo-600 hover:underline">How is this calculated? →</button>
+            <button className="mt-6 text-[9px] font-bold text-primary-purple hover:underline">How is this calculated? →</button>
           </div>
         </div>
 
@@ -236,12 +232,12 @@ export default function CareerInsightsPage() {
           <div className="lg:col-span-5 bg-white rounded-3xl border border-slate-100 shadow-sm p-6">
             <div className="flex justify-between items-center mb-8">
               <div>
-                <h3 className="font-bold text-[#0F172A] text-sm">Skills You Have vs. Skills You Need</h3>
+                <h3 className="font-bold text-brand-navy text-sm">Skills You Have vs. Skills You Need</h3>
                 <p className="text-[10px] text-slate-400 font-medium mt-1">Detailed analysis of your current skill gap.</p>
               </div>
               <div className="flex gap-4">
                 <div className="flex items-center gap-1.5">
-                  <div className="w-2 h-2 rounded-full bg-indigo-500" />
+                  <div className="w-2 h-2 rounded-full bg-primary-purple" />
                   <span className="text-[9px] font-bold text-slate-400 uppercase">You Have</span>
                 </div>
                 <div className="flex items-center gap-1.5">
@@ -264,7 +260,7 @@ export default function CareerInsightsPage() {
                       style={{ width: `${skill.need}%` }}
                     />
                     <div
-                      className="absolute left-0 top-0 h-full bg-indigo-500 rounded-full transition-all duration-1000 z-10"
+                      className="absolute left-0 top-0 h-full bg-primary-purple rounded-full transition-all duration-1000 z-10"
                       style={{ width: `${skill.have}%` }}
                     />
                   </div>
@@ -272,7 +268,7 @@ export default function CareerInsightsPage() {
               ))}
             </div>
 
-            <button className="w-full mt-8 py-2.5 text-[11px] font-bold text-indigo-600 bg-indigo-50/50 hover:bg-indigo-50 rounded-xl transition-all">
+            <button className="w-full mt-8 py-2.5 text-[11px] font-bold text-primary-purple bg-primary-purple/5 hover:bg-primary-purple/5 rounded-xl transition-all">
               View Detailed Skill Gap Analysis →
             </button>
           </div>
@@ -280,7 +276,7 @@ export default function CareerInsightsPage() {
           {/* Top Skills to Improve */}
           <div className="lg:col-span-4 bg-white rounded-3xl border border-slate-100 shadow-sm p-6 flex flex-col">
             <div className="mb-8">
-              <h3 className="font-bold text-[#0F172A] text-sm">Top Skills to Improve</h3>
+              <h3 className="font-bold text-brand-navy text-sm">Top Skills to Improve</h3>
               <p className="text-[10px] text-slate-400 font-medium mt-1">Focus on these skills to boost Hirescore.</p>
             </div>
 
@@ -304,14 +300,14 @@ export default function CareerInsightsPage() {
               ))}
             </div>
 
-            <button className="w-full mt-8 py-2.5 text-[11px] font-bold text-indigo-600 border border-indigo-100 hover:bg-indigo-50 rounded-xl transition-all">
+            <button className="w-full mt-8 py-2.5 text-[11px] font-bold text-primary-purple border border-primary-purple/20 hover:bg-primary-purple/5 rounded-xl transition-all">
               View Learning Recommendations →
             </button>
           </div>
 
           {/* Career Growth Path */}
           <div className="lg:col-span-3 bg-white rounded-3xl border border-slate-100 shadow-sm p-6">
-            <h3 className="font-bold text-[#0F172A] text-sm mb-8">Career Growth Path</h3>
+            <h3 className="font-bold text-brand-navy text-sm mb-8">Career Growth Path</h3>
 
             <div className="relative space-y-8 pl-8">
               <div className="absolute left-[15px] top-2 bottom-2 w-0.5 border-l-2 border-dashed border-slate-100" />
@@ -328,7 +324,7 @@ export default function CareerInsightsPage() {
               ))}
             </div>
 
-            <button className="w-full mt-8 py-2.5 text-[11px] font-bold text-indigo-600 hover:underline">Detailed Roadmap →</button>
+            <button className="w-full mt-8 py-2.5 text-[11px] font-bold text-primary-purple hover:underline">Detailed Roadmap →</button>
           </div>
         </div>
 
@@ -336,12 +332,12 @@ export default function CareerInsightsPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           {/* Top Companies Hiring */}
           <div className="lg:col-span-6 bg-white rounded-3xl border border-slate-100 shadow-sm p-6 flex flex-col">
-            <h3 className="font-bold text-[#0F172A] text-sm mb-8">Top Companies Hiring</h3>
+            <h3 className="font-bold text-brand-navy text-sm mb-8">Top Companies Hiring</h3>
 
             <div className="grid grid-cols-6 gap-4 flex-1 items-center">
               {companies.map((company) => (
                 <div key={company.name} className="flex flex-col items-center gap-3">
-                  <div className="w-12 h-12 bg-white rounded-xl border border-slate-100 shadow-sm flex items-center justify-center font-black text-xs text-indigo-600 hover:scale-110 transition-transform cursor-pointer">
+                  <div className="w-12 h-12 bg-white rounded-xl border border-slate-100 shadow-sm flex items-center justify-center font-black text-xs text-primary-purple hover:scale-110 transition-transform cursor-pointer">
                     {company.logo}
                   </div>
                   <div className="text-center">
@@ -353,18 +349,18 @@ export default function CareerInsightsPage() {
               ))}
             </div>
 
-            <button className="mt-8 text-[11px] font-bold text-indigo-600 hover:underline text-center">View All Companies →</button>
+            <button className="mt-8 text-[11px] font-bold text-primary-purple hover:underline text-center">View All Companies →</button>
           </div>
 
           {/* Explore Career Insights Resources */}
           <div className="lg:col-span-6 bg-white rounded-3xl border border-slate-100 shadow-sm p-6 flex flex-col">
-            <h3 className="font-bold text-[#0F172A] text-sm mb-8">Explore Career Insights</h3>
+            <h3 className="font-bold text-brand-navy text-sm mb-8">Explore Career Insights</h3>
 
             <div className="grid grid-cols-2 gap-4 flex-1">
               {[
                 { title: 'Salary Explorer', desc: 'Compare salaries by role, experience and location', icon: Briefcase, color: 'text-purple-600', bg: 'bg-purple-50' },
-                { title: 'Job Market Trends', desc: "See what's trending in the job market", icon: BarChart3, color: 'text-blue-600', bg: 'bg-blue-50' },
-                { title: 'Resume Guide', desc: 'Improve your resume for better opportunities', icon: FileText, color: 'text-indigo-600', bg: 'bg-indigo-50' },
+                { title: 'Job Market Trends', desc: "See what's trending in the job market", icon: BarChart3, color: 'text-primary-purple', bg: 'bg-primary-purple/10' },
+                { title: 'Resume Guide', desc: 'Improve your resume for better opportunities', icon: FileText, color: 'text-primary-purple', bg: 'bg-primary-purple/10' },
                 { title: 'Interview Guide', desc: 'Prepare for interviews with expert tips', icon: UserCheck, color: 'text-orange-600', bg: 'bg-orange-50' },
               ].map((res) => (
                 <div key={res.title} className="flex items-start gap-4 p-4 rounded-2xl bg-slate-50/50 hover:bg-slate-50 transition-all cursor-pointer group border border-transparent hover:border-slate-100">
@@ -379,7 +375,7 @@ export default function CareerInsightsPage() {
               ))}
             </div>
 
-            <button className="mt-8 text-[11px] font-bold text-indigo-600 hover:underline text-center">Explore All Resources →</button>
+            <button className="mt-8 text-[11px] font-bold text-primary-purple hover:underline text-center">Explore All Resources →</button>
           </div>
         </div>
       </div>

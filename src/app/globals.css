@@ -1,28 +1,46 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary-navy: #010c1e;
+  --font-sora: var(--font-sora);
+  --font-inter: var(--font-inter);
+
+  --color-primary-purple: #5B2EFF;
+  --color-primary-light: #7A5CFF;
+  --color-accent-cyan: #00D1FF;
+  --color-brand-navy: #0A0A12;
+  --color-brand-white: #F2F4F7;
+
+  --color-primary-navy: var(--color-brand-navy);
   --color-accent-red: #E50914;
   --color-neutral-white: #FFFFFF;
   --color-neutral-light: #E5E7EB;
   --color-neutral-dark: #111827;
   --color-background: #F8FAF8;
-  --color-foreground: #0F172A;
+  --color-foreground: var(--color-brand-navy);
   --color-muted: #64748B;
   --color-border: #E2E8F0;
   --color-success: #22C55E;
   --color-warning: #F59E0B;
-  --color-info: #3B82F6;
+  --color-info: #8B5CF6;
 
   --shadow-premium: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --shadow-premium-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  
+
   --radius-lg: 12px;
 }
 
 @layer base {
   body {
-    @apply font-sans bg-background text-foreground antialiased;
+    @apply font-inter bg-background text-foreground antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-sora font-semibold tracking-tight;
   }
 }
 
@@ -30,7 +48,7 @@
   .glass {
     @apply bg-white/70 backdrop-blur-md border border-white/20;
   }
-  
+
   .card-premium {
     @apply bg-white rounded-lg p-6 border border-border shadow-premium hover:shadow-premium-lg transition-all duration-200;
   }
@@ -40,11 +58,11 @@
   }
 
   .brand-heading {
-    @apply font-black tracking-tighter uppercase;
+    @apply font-sora font-bold tracking-tight;
   }
 
   .brand-subtitle {
-    @apply font-bold tracking-[0.2em] uppercase text-[10px];
+    @apply font-inter font-medium tracking-[0.1em] uppercase text-[11px] text-muted;
   }
 }
 

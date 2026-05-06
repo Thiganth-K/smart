@@ -1,8 +1,21 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
+import { Sora, Inter } from 'next/font/google';
 import "./globals.css";
 import Sidebar from "@/components/Sidebar";
+
+const sora = Sora({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-sora',
+});
+
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+});
 
 export default function RootLayout({
   children,
@@ -13,8 +26,8 @@ export default function RootLayout({
   const isLoginPage = pathname === '/login';
 
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className="antialiased" suppressHydrationWarning>
+    <html lang="en" className={`${sora.variable} ${inter.variable}`} suppressHydrationWarning>
+      <body className="antialiased font-inter" suppressHydrationWarning>
         {!isLoginPage ? (
           <div className="flex min-h-screen">
             <Sidebar />

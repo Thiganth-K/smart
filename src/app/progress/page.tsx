@@ -35,7 +35,7 @@ import {
 } from 'recharts';
 
 const stats = [
-  { label: 'Overall Progress', val: '68%', sub: 'Completed', trend: '+ 12% from last month', icon: Activity, color: 'text-indigo-600', bg: 'bg-indigo-50', type: 'circle' },
+  { label: 'Overall Progress', val: '68%', sub: 'Completed', trend: '+ 12% from last month', icon: Activity, color: 'text-primary-purple', bg: 'bg-primary-purple/10', type: 'circle' },
   { label: 'Skills Improved', val: '16', sub: 'Out of 24', trend: '↑ 3 this month', icon: Zap, color: 'text-green-600', bg: 'bg-green-50' },
   { label: 'Assessments Taken', val: '28', sub: 'Out of 45 Planned', trend: '↑ 5 this month', icon: FileText, color: 'text-blue-600', bg: 'bg-blue-50' },
   { label: 'Practice Questions', val: '1,248', sub: 'Questions Solved', trend: '↑ 156 this month', icon: HelpCircle, color: 'text-orange-600', bg: 'bg-orange-50' },
@@ -61,7 +61,7 @@ const categoryProgress = [
   { name: 'Database Management', val: 68, color: 'bg-orange-500' },
   { name: 'Operating Systems', val: 62, color: 'bg-yellow-500' },
   { name: 'System Design', val: 55, color: 'bg-red-500' },
-  { name: 'Web Development', val: 48, color: 'bg-indigo-500' },
+  { name: 'Web Development', val: 48, color: 'bg-primary-purple' },
   { name: 'Aptitude', val: 70, color: 'bg-purple-500' },
 ];
 
@@ -93,7 +93,7 @@ const milestones = [
   { title: '7 Day Streak', sub: 'Maintained a 7 day learning streak', date: 'Completed on 22 Apr 2025', icon: Flame, color: 'text-green-600', bg: 'bg-green-50' },
   { title: '10 Assessments', sub: 'Completed 10 assessments', date: 'Completed on 05 May 2025', icon: Award, color: 'text-green-600', bg: 'bg-green-50' },
   { title: '50 Practice Sessions', sub: 'Complete 50 practice sessions', progress: '35 / 50', icon: Target, color: 'text-purple-600', bg: 'bg-purple-50' },
-  { title: 'Skill Master', sub: 'Reach 90% in any 5 skills', progress: '2 / 5', icon: Zap, color: 'text-indigo-600', bg: 'bg-indigo-50' },
+  { title: 'Skill Master', sub: 'Reach 90% in any 5 skills', progress: '2 / 5', icon: Zap, color: 'text-primary-purple', bg: 'bg-primary-purple/10' },
   { title: 'Pro Learner', sub: 'Study for 100 hours', progress: '48h 30m / 100h', icon: BookOpen, color: 'text-slate-600', bg: 'bg-slate-50' },
 ];
 
@@ -109,18 +109,14 @@ export default function ProgressPage() {
 
   return (
     <div className="flex flex-col min-h-screen bg-[#F8FAFC]" suppressHydrationWarning={true}>
-      <Header title="Progress" showSearch={false} />
+      <Header 
+        title="Progress" 
+        description="Track your learning journey and improvement over time." 
+        showSearch={false} 
+      />
 
       <div className="p-8 space-y-8 pb-12">
-        {/* Page Header */}
-        <div className="flex justify-between items-start -mt-4">
-          <div>
-            <h1 className="text-3xl font-bold text-[#0F172A]">Progress</h1>
-            <p className="text-slate-500 font-medium mt-1">
-              Track your learning journey and improvement over time.
-            </p>
-          </div>
-        </div>
+
 
         {/* Stats Row */}
         <div className="grid grid-cols-1 md:grid-cols-6 gap-4">
@@ -137,7 +133,7 @@ export default function ProgressPage() {
                       </svg>
                     </div>
                     <div>
-                      <div className="text-2xl font-black text-[#0F172A] leading-none">68%</div>
+                      <div className="text-2xl font-black text-brand-navy leading-none">68%</div>
                       <div className="text-[10px] font-bold text-slate-400 mt-1">Completed</div>
                     </div>
                   </div>
@@ -154,7 +150,7 @@ export default function ProgressPage() {
                     <h3 className="text-[10px] font-bold text-slate-500 leading-tight">{stat.label}</h3>
                   </div>
                   <div className="mb-auto">
-                    <div className="text-2xl font-black text-[#0F172A] leading-none mb-1.5">{stat.val}</div>
+                    <div className="text-2xl font-black text-brand-navy leading-none mb-1.5">{stat.val}</div>
                     <div className="text-[10px] font-bold text-slate-400">{stat.sub}</div>
                   </div>
                   {stat.trend && (
@@ -174,16 +170,16 @@ export default function ProgressPage() {
           <div className="lg:col-span-6 bg-white rounded-3xl border border-slate-100 shadow-sm p-5 flex flex-col h-full">
             <div className="flex justify-between items-center mb-6">
               <div>
-                <h3 className="font-bold text-[#0F172A] text-sm flex items-center gap-2">
+                <h3 className="font-bold text-brand-navy text-sm flex items-center gap-2">
                   Progress Over Time <Info size={14} className="text-slate-300" />
                 </h3>
                 <div className="flex items-center gap-5 mt-3">
                   {['Overall', 'Assessments', 'Practice', 'Study Time'].map((tab, idx) => (
                     <button key={tab} className={`text-[10px] font-bold pb-1.5 relative ${
-                      idx === 0 ? 'text-indigo-600' : 'text-slate-400 hover:text-slate-600 transition-colors'
+                      idx === 0 ? 'text-primary-purple' : 'text-slate-400 hover:text-slate-600 transition-colors'
                     }`}>
                       {tab}
-                      {idx === 0 && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-indigo-600 rounded-full" />}
+                      {idx === 0 && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary-purple rounded-full" />}
                     </button>
                   ))}
                 </div>
@@ -233,8 +229,8 @@ export default function ProgressPage() {
           {/* Progress by Category (3 spans) */}
           <div className="lg:col-span-3 bg-white rounded-3xl border border-slate-100 shadow-sm p-5 h-full">
             <div className="flex justify-between items-center mb-5">
-              <h3 className="font-bold text-[#0F172A] text-sm">Progress by Category</h3>
-              <button className="text-blue-600 text-[10px] font-bold hover:underline">View All</button>
+              <h3 className="font-bold text-brand-navy text-sm">Progress by Category</h3>
+              <button className="text-primary-purple text-[10px] font-bold hover:underline">View All</button>
             </div>
             <div className="space-y-4">
               {categoryProgress.slice(0, 5).map((item) => (
@@ -254,8 +250,8 @@ export default function ProgressPage() {
           {/* Assessment Performance (3 spans) */}
           <div className="lg:col-span-3 bg-white rounded-3xl border border-slate-100 shadow-sm p-5 h-full">
             <div className="flex justify-between items-center mb-5">
-              <h3 className="font-bold text-[#0F172A] text-sm">Assessment Performance</h3>
-              <button className="text-blue-600 text-[10px] font-bold hover:underline">View All</button>
+              <h3 className="font-bold text-brand-navy text-sm">Assessment Performance</h3>
+              <button className="text-primary-purple text-[10px] font-bold hover:underline">View All</button>
             </div>
             <div className="flex flex-col items-center">
               <div className="relative w-24 h-24 mb-6">
@@ -304,8 +300,8 @@ export default function ProgressPage() {
           {/* Subject / Skill Progress (8 spans) */}
           <div className="lg:col-span-8 bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden flex flex-col">
             <div className="px-6 py-4 border-b border-slate-50 flex justify-between items-center">
-              <h3 className="font-bold text-[#0F172A] text-sm">Subject / Skill Progress</h3>
-              <button className="text-blue-600 text-[10px] font-bold hover:underline">View All</button>
+              <h3 className="font-bold text-brand-navy text-sm">Subject / Skill Progress</h3>
+              <button className="text-primary-purple text-[10px] font-bold hover:underline">View All</button>
             </div>
             <div className="overflow-x-auto">
               <table className="w-full">
@@ -324,7 +320,7 @@ export default function ProgressPage() {
                     <tr key={idx} className="hover:bg-slate-50/50 transition-colors">
                       <td className="px-6 py-3">
                         <div className="flex items-center gap-2.5">
-                          <div className="w-7 h-7 bg-slate-50 rounded-lg flex items-center justify-center text-indigo-500">
+                          <div className="w-7 h-7 bg-slate-50 rounded-lg flex items-center justify-center text-primary-purple">
                             {idx === 0 ? <Code2 size={14} /> : idx === 1 ? <Zap size={14} /> : idx === 2 ? <Database size={14} /> : idx === 3 ? <Layout size={14} /> : <Cpu size={14} />}
                           </div>
                           <span className="text-[10px] font-bold text-slate-700">{skill.name}</span>
@@ -333,7 +329,7 @@ export default function ProgressPage() {
                       <td className="px-6 py-3">
                         <div className="w-24 flex items-center gap-2">
                           <div className="h-1 flex-1 bg-slate-50 rounded-full overflow-hidden">
-                            <div className="h-full bg-indigo-500 rounded-full" style={{ width: `${skill.progress}%` }} />
+                            <div className="h-full bg-primary-purple rounded-full" style={{ width: `${skill.progress}%` }} />
                           </div>
                           <span className="text-[9px] font-black text-slate-800">{skill.progress}%</span>
                         </div>
@@ -370,7 +366,7 @@ export default function ProgressPage() {
           {/* Time Investment (4 spans) */}
           <div className="lg:col-span-4 bg-white rounded-3xl border border-slate-100 shadow-sm p-6 h-full">
             <div className="flex justify-between items-center mb-8">
-              <h3 className="font-bold text-[#0F172A] text-base">Time Investment</h3>
+              <h3 className="font-bold text-brand-navy text-base">Time Investment</h3>
               <div className="flex items-center gap-1.5 text-[11px] font-bold text-slate-400 cursor-pointer hover:text-slate-600 transition-colors">
                 This Month <ChevronDown size={14} />
               </div>
@@ -444,7 +440,7 @@ export default function ProgressPage() {
               </div>
             ))}
             <div className="flex items-center justify-center px-8 border border-dashed border-slate-200 rounded-2xl group cursor-pointer hover:bg-slate-50 transition-colors min-w-[140px]">
-              <span className="text-[10px] font-bold text-slate-400 group-hover:text-indigo-600 transition-colors">View All</span>
+              <span className="text-[10px] font-bold text-slate-400 group-hover:text-primary-purple transition-colors">View All</span>
             </div>
           </div>
         </div>
